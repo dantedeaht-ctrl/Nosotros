@@ -3,22 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#17111d">
+<meta name="theme-color" content="#070b14">
 <title>Nosotros ❤️</title>
 
 <style>
 :root{
-  --bg:#120e16;
-  --card:#1d1623;
-  --card2:#251c2d;
-  --line:#3a2b43;
-  --text:#fff7fb;
-  --muted:#b9a9b8;
-  --pink:#ff5c91;
-  --pink2:#ff8fb2;
-  --purple:#9a72ff;
-  --green:#53d6a2;
-  --gold:#f4c96b;
+  --bg:#070b14;
+  --card:#101827;
+  --card2:#152239;
+  --line:#26364e;
+  --text:#f7f8fb;
+  --muted:#aeb9c9;
+  --pink:#6f8cff;
+  --pink2:#8fa7ff;
+  --purple:#a58bff;
+  --green:#69d7ad;
+  --gold:#f3c96b;
+  --blue:#5d8dff;
 }
 
 *{box-sizing:border-box}
@@ -27,81 +28,81 @@ html,body{
   margin:0;
   background:var(--bg);
   color:var(--text);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
 }
 
 body{
   min-height:100vh;
-  padding-bottom:92px;
+  padding-bottom:92px
 }
 
 button,input,textarea{
-  font:inherit;
+  font:inherit
 }
 
 button{
   border:0;
-  cursor:pointer;
+  cursor:pointer
 }
 
 .app{
   max-width:760px;
-  margin:auto;
+  margin:auto
 }
 
 header{
   padding:28px 20px 20px;
   background:
     radial-gradient(
-      circle at 85% 10%,
-      #5b2945 0,
-      #24152d 35%,
-      #120e16 72%
+      circle at 88% 8%,
+      #304d78 0,
+      #17253d 34%,
+      #070b14 74%
     );
 }
 
 .topline{
   display:flex;
   justify-content:space-between;
-  align-items:center;
+  align-items:center
 }
 
 .logo{
   font-weight:900;
   font-size:28px;
-  letter-spacing:-1px;
+  letter-spacing:-1px
 }
 
 .heart{
-  font-size:27px;
+  font-size:27px
 }
 
 .greeting{
-  margin-top:22px;
+  margin-top:22px
 }
 
 .greeting small{
-  color:#d5bdcf;
+  color:#c5cfde
 }
 
 .greeting h1{
   font-size:34px;
   line-height:1.05;
-  margin:6px 0;
+  margin:6px 0
 }
 
 .greeting p{
   color:var(--muted);
   margin:0;
-  line-height:1.45;
+  line-height:1.45
 }
 
 main{
-  padding:14px;
+  padding:14px
 }
 
 .card{
-  background:linear-gradient(145deg,var(--card),#17121c);
+  background:linear-gradient(145deg,var(--card),#0c1320);
   border:1px solid var(--line);
   border-radius:24px;
   padding:18px;
@@ -113,72 +114,83 @@ main{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:12px;
+  margin-bottom:12px
 }
 
 .sectionTitle h2{
   font-size:20px;
-  margin:0;
+  margin:0
 }
 
 .sectionTitle button{
   background:none;
-  color:var(--pink2);
-  font-weight:700;
+  color:var(--gold);
+  font-weight:700
 }
 
 .today{
-  background:linear-gradient(135deg,#54223b,#2a1831);
-  border-color:#70405b;
+  background:
+    linear-gradient(
+      135deg,
+      #183450,
+      #102033 55%,
+      #182b24
+    );
+  border-color:#355575
 }
 
 .today .eyebrow{
-  color:#ffb4cc;
+  color:#f3c96b;
   font-weight:800;
   text-transform:uppercase;
   font-size:12px;
-  letter-spacing:1px;
+  letter-spacing:1px
 }
 
 .today h2{
   font-size:25px;
-  margin:7px 0;
+  margin:7px 0
 }
 
 .today p{
-  color:#eadbe4;
-  line-height:1.5;
+  color:#d9e1ec;
+  line-height:1.5
 }
 
 .primary{
   width:100%;
   padding:15px;
   border-radius:16px;
-  background:linear-gradient(135deg,var(--pink),#d73c75);
+  background:
+    linear-gradient(
+      135deg,
+      #5d8dff,
+      #6f68d9
+    );
   color:#fff;
   font-weight:900;
   font-size:16px;
-  box-shadow:0 8px 22px #ff5c9140;
+  box-shadow:0 8px 22px #5d8dff38
 }
 
 .primary:disabled{
   opacity:.55;
-  cursor:default;
+  cursor:default
 }
 
 .secondary{
   padding:12px 15px;
   border-radius:14px;
-  background:#302438;
+  background:#1a2940;
   color:#fff;
-  border:1px solid #493650;
-  font-weight:750;
+  border:1px solid #304867;
+  font-weight:750
 }
 
 .grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:10px;
+  gap:10px
 }
 
 .tile{
@@ -188,17 +200,17 @@ main{
   padding:15px;
   text-align:left;
   color:#fff;
-  min-height:110px;
+  min-height:110px
 }
 
 .tile .ico{
-  font-size:27px;
+  font-size:27px
 }
 
 .tile b{
   display:block;
   margin-top:8px;
-  font-size:15px;
+  font-size:15px
 }
 
 .tile span{
@@ -206,46 +218,52 @@ main{
   color:var(--muted);
   font-size:12px;
   margin-top:3px;
-  line-height:1.35;
+  line-height:1.35
 }
 
 .progress{
   height:9px;
-  background:#332538;
+  background:#172238;
   border-radius:99px;
   overflow:hidden;
-  margin:14px 0 7px;
+  margin:14px 0 7px
 }
 
 .progress i{
   display:block;
   height:100%;
   width:0;
-  background:linear-gradient(90deg,var(--pink),var(--purple));
-  border-radius:99px;
+  background:
+    linear-gradient(
+      90deg,
+      var(--blue),
+      var(--purple),
+      var(--gold)
+    );
+  border-radius:99px
 }
 
 .statrow{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:8px;
+  gap:8px
 }
 
 .stat{
-  background:#17121d;
+  background:#0c1421;
   border:1px solid var(--line);
   border-radius:16px;
   padding:12px;
-  text-align:center;
+  text-align:center
 }
 
 .stat strong{
   display:block;
-  font-size:22px;
+  font-size:22px
 }
 
 .stat small{
-  color:var(--muted);
+  color:var(--muted)
 }
 
 .modal{
@@ -254,48 +272,48 @@ main{
   background:#000b;
   display:none;
   align-items:flex-end;
-  z-index:20;
+  z-index:20
 }
 
 .sheet{
   width:100%;
   max-width:760px;
   margin:auto;
-  background:#1a141f;
+  background:#0e1624;
   border-radius:28px 28px 0 0;
   border:1px solid var(--line);
   padding:20px;
   max-height:88vh;
-  overflow:auto;
+  overflow:auto
 }
 
 .sheet h2{
-  margin-top:0;
+  margin-top:0
 }
 
 .close{
   float:right;
-  background:#302438;
+  background:#1a2940;
   color:#fff;
   border-radius:50%;
   width:38px;
-  height:38px;
+  height:38px
 }
 
 textarea,
 input{
   width:100%;
-  background:#110d14;
+  background:#080e18;
   color:#fff;
-  border:1px solid #47344e;
+  border:1px solid #30435f;
   border-radius:15px;
   padding:13px;
-  outline:none;
+  outline:none
 }
 
 textarea{
   min-height:120px;
-  resize:vertical;
+  resize:vertical
 }
 
 label{
@@ -303,87 +321,92 @@ label{
   color:var(--muted);
   font-size:13px;
   font-weight:700;
-  margin:12px 0 6px;
+  margin:12px 0 6px
 }
 
 .actions{
   display:flex;
   gap:9px;
-  margin-top:12px;
+  margin-top:12px
 }
 
 .actions>*{
-  flex:1;
+  flex:1
 }
 
 .challenge{
-  background:#18121d;
+  background:#0d1623;
   border:1px solid var(--line);
   border-radius:18px;
   padding:15px;
-  margin:9px 0;
+  margin:9px 0
 }
 
 .challenge.done{
   border-color:#3c8c72;
-  background:#14231f;
+  background:#14231f
 }
 
 .challenge .tag{
   font-size:11px;
-  color:var(--pink2);
+  color:var(--gold);
   font-weight:800;
-  text-transform:uppercase;
+  text-transform:uppercase
 }
 
 .challenge h3{
-  margin:5px 0;
+  margin:5px 0
 }
 
 .challenge p{
   color:var(--muted);
   margin:0;
-  line-height:1.4;
+  line-height:1.4
 }
 
 .message{
   padding:14px;
   border-radius:17px;
-  background:#2a1d31;
+  background:#132238;
   margin:8px 0;
-  border:1px solid #46344d;
+  border:1px solid #46344d
 }
 
 .message small{
-  color:var(--muted);
+  color:var(--muted)
 }
 
 .empty{
   color:var(--muted);
   text-align:center;
-  padding:18px;
+  padding:18px
 }
 
 .personbar{
   display:flex;
   gap:8px;
-  margin-top:10px;
+  margin-top:10px
 }
 
 .personbar button{
   flex:1;
   padding:11px;
   border-radius:14px;
-  background:#211827;
-  color:#b9a9b8;
+  background:#0f1a2a;
+  color:#aeb9c9;
   border:1px solid var(--line);
-  font-weight:800;
+  font-weight:800
 }
 
 .personbar button.active{
-  background:linear-gradient(135deg,#ff5c91,#d73c75);
+  background:
+    linear-gradient(
+      135deg,
+      #5d8dff,
+      #6f68d9
+    );
   color:#fff;
-  border-color:#ff8fb2;
+  border-color:#8fa7ff
 }
 
 .activity{
@@ -391,75 +414,143 @@ label{
   gap:10px;
   align-items:flex-start;
   padding:12px 0;
-  border-bottom:1px solid #332638;
+  border-bottom:1px solid #26364e
 }
 
 .activity:last-child{
-  border-bottom:0;
+  border-bottom:0
 }
 
 .activity .dot{
   font-size:22px;
-  line-height:1;
+  line-height:1
 }
 
 .badge{
   display:inline-block;
   padding:4px 8px;
   border-radius:99px;
-  background:#302438;
-  color:#ffb5cc;
+  background:#1a2940;
+  color:#f3c96b;
   font-size:11px;
   font-weight:800;
-  margin-top:5px;
+  margin-top:5px
 }
 
 .reactions{
   display:flex;
   gap:6px;
-  margin-top:9px;
+  margin-top:9px
 }
 
 .reactions button{
   padding:6px 9px;
   border-radius:10px;
-  background:#211827;
+  background:#0f1a2a;
   color:#fff;
-  border:1px solid #45334d;
-  font-size:14px;
+  border:1px solid #2f4868;
+  font-size:14px
 }
 
 .intimacyGrid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:9px;
+  gap:9px
 }
 
 .intimacyGrid button{
   padding:14px;
   border-radius:16px;
-  background:#241a2b;
+  background:#122033;
   border:1px solid var(--line);
   color:#fff;
-  text-align:left;
+  text-align:left
 }
 
 .intimacyGrid b{
   display:block;
-  margin-bottom:4px;
+  margin-bottom:4px
 }
 
 .intimacyGrid span{
   color:var(--muted);
-  font-size:12px;
+  font-size:12px
 }
 
 .signalBox{
-  background:linear-gradient(135deg,#2b1930,#1b1420);
-  border:1px solid #5a3650;
+  background:
+    linear-gradient(
+      135deg,
+      #18253b,
+      #122019
+    );
+  border:1px solid #36516d;
   border-radius:18px;
   padding:14px;
-  margin-top:10px;
+  margin-top:10px
+}
+
+.micro{
+  font-size:11px;
+  color:var(--gold);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.7px
+}
+
+.dayBridge{
+  background:
+    linear-gradient(
+      145deg,
+      #10263a,
+      #102019 72%
+    );
+  border-color:#31536a
+}
+
+.quickGrid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:9px;
+  margin-top:12px
+}
+
+.quick{
+  background:
+    linear-gradient(
+      145deg,
+      #13263a,
+      #102033
+    );
+  border:1px solid #2c4965;
+  border-radius:17px;
+  padding:13px;
+  text-align:left;
+  color:#fff;
+  min-height:86px
+}
+
+.quick b{
+  display:block;
+  font-size:14px
+}
+
+.quick span{
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.35;
+  margin-top:4px
+}
+
+.dayMessage{
+  margin-top:10px
+}
+
+@media(max-width:420px){
+  .intimacyGrid{
+    grid-template-columns:1fr
+  }
 }
 
 .nav{
@@ -467,17 +558,17 @@ label{
   bottom:0;
   left:0;
   right:0;
-  background:#17111deF;
+  background:#0a101bf2;
   backdrop-filter:blur(16px);
   border-top:1px solid var(--line);
-  z-index:10;
+  z-index:10
 }
 
 .navin{
   max-width:760px;
   margin:auto;
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(4,1fr)
 }
 
 .nav button{
@@ -485,24 +576,26 @@ label{
   color:#9f909f;
   padding:11px 3px 13px;
   font-size:11px;
-  font-weight:750;
+  font-weight:750
 }
 
 .nav button b{
   display:block;
   font-size:22px;
-  margin-bottom:2px;
+  margin-bottom:2px
 }
 
 .nav button.active{
-  color:#ff86aa;
+  color:#f3c96b
 }
 
 .toast{
   position:fixed;
   left:50%;
   bottom:95px;
-  transform:translateX(-50%) translateY(20px);
+  transform:
+    translateX(-50%)
+    translateY(20px);
   background:#fff;
   color:#20151e;
   padding:12px 17px;
@@ -512,31 +605,27 @@ label{
   pointer-events:none;
   transition:.25s;
   z-index:40;
-  white-space:nowrap;
+  white-space:nowrap
 }
 
 .toast.show{
   opacity:1;
-  transform:translateX(-50%) translateY(0);
+  transform:
+    translateX(-50%)
+    translateY(0)
 }
 
 .hidden{
-  display:none!important;
-}
-
-@media(max-width:420px){
-  .intimacyGrid{
-    grid-template-columns:1fr;
-  }
+  display:none!important
 }
 
 @media(min-width:600px){
   main{
-    padding:18px;
+    padding:18px
   }
 
   .grid{
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr)
   }
 }
 </style>
@@ -553,12 +642,15 @@ label{
       NOSOTROS <span class="heart">❤️</span>
     </div>
 
-    <button class="secondary" onclick="openModal('settings')">
+    <button
+      class="secondary"
+      onclick="openModal('settings')">
       ⚙️
     </button>
   </div>
 
   <div class="greeting">
+
     <small id="dateText"></small>
 
     <h1>
@@ -566,11 +658,14 @@ label{
     </h1>
 
     <p>
-      Un espacio pequeño para compartir, jugar, hablar y seguir construyendo lo suyo.
+      Un espacio pequeño para compartir,
+      jugar, hablar y seguir construyendo lo suyo.
     </p>
+
   </div>
 
 </header>
+
 
 <main>
 
@@ -591,33 +686,106 @@ label{
     <button
       class="primary"
       id="todayBtn"
-      onclick="completeToday()"
-    >
+      onclick="completeToday()">
       ❤️ Lo hicimos
     </button>
 
   </div>
 
 
-  <div class="card">
+  <div class="card dayBridge">
 
     <div class="sectionTitle">
-      <h2>❤️ Nuestro momento</h2>
-      <button onclick="openModal('five')">
-        Abrir
-      </button>
+
+      <h2>
+        💌 Me acordé de ti
+      </h2>
+
+      <span class="micro">
+        30 segundos
+      </span>
+
     </div>
 
-    <p style="color:var(--muted);line-height:1.5">
-      ¿Tienen cinco minutos? Elijan una pregunta y hablen sin teléfonos,
-      sin pendientes y sin querer resolverlo todo.
+    <p
+      style="color:var(--muted);line-height:1.5;margin-top:0">
+
+      Si durante el día tienes un espacio,
+      deja una señal. La otra persona la encontrará
+      cuando pueda.
+
     </p>
 
+    <div class="quickGrid">
+
+      <button
+        class="quick"
+        onclick="sendNeed('💭 Me acordé de ti')">
+
+        <b>
+          💭 Pensé en ti
+        </b>
+
+        <span>
+          Solo quería que lo supieras.
+        </span>
+
+      </button>
+
+
+      <button
+        class="quick"
+        onclick="sendNeed('🫶 Te mando un abrazo')">
+
+        <b>
+          🫶 Un abrazo
+        </b>
+
+        <span>
+          Para cuando tengas un momento.
+        </span>
+
+      </button>
+
+
+      <button
+        class="quick"
+        onclick="sendNeed('🥰 Me dieron ganas de decirte algo bonito')">
+
+        <b>
+          🥰 Algo bonito
+        </b>
+
+        <span>
+          Déjale una pequeña sonrisa.
+        </span>
+
+      </button>
+
+
+      <button
+        class="quick"
+        onclick="sendNeed('✨ Tengo algo que contarte después')">
+
+        <b>
+          ✨ Tengo algo para ti
+        </b>
+
+        <span>
+          Lo hablamos cuando podamos.
+        </span>
+
+      </button>
+
+    </div>
+
+
     <button
-      class="primary"
-      onclick="openModal('five')"
-    >
-      ❤️ 5 MINUTOS
+      class="primary dayMessage"
+      onclick="openModal('direct')">
+
+      ✍️ Escribirle un mensaje
+
     </button>
 
   </div>
@@ -626,7 +794,43 @@ label{
   <div class="card">
 
     <div class="sectionTitle">
-      <h2>💞 Esta semana</h2>
+
+      <h2>
+        ⏱️ 5 minutos
+      </h2>
+
+      <span class="micro">
+        Cuando puedas
+      </span>
+
+    </div>
+
+    <p
+      style="color:var(--muted);line-height:1.5;margin-top:0">
+
+      No tienes que estar junto a ella.
+      Responde aquí una pregunta o deja algo
+      para que lo encuentre durante el día.
+
+    </p>
+
+    <button
+      class="primary"
+      onclick="openModal('five')">
+
+      💬 Tengo 5 minutos para ti
+
+    </button>
+
+  </div>
+
+
+  <div class="card">
+
+    <div class="sectionTitle">
+      <h2>
+        💞 Esta semana
+      </h2>
     </div>
 
     <div class="statrow">
@@ -654,9 +858,10 @@ label{
 
     <small
       id="progressText"
-      style="color:var(--muted)"
-    >
+      style="color:var(--muted)">
+
       Construyan un momento hoy.
+
     </small>
 
   </div>
@@ -665,16 +870,24 @@ label{
   <div class="card">
 
     <div class="sectionTitle">
-      <h2>🧭 Señales de nosotros</h2>
+
+      <h2>
+        🧭 Señales de nosotros
+      </h2>
 
       <button onclick="openModal('checkin')">
         Hoy
       </button>
+
     </div>
 
-    <p style="color:var(--muted);line-height:1.5">
-      Un resumen de las señales que cada uno ha elegido compartir.
-      No es un diagnóstico psicológico ni adivina emociones.
+    <p
+      style="color:var(--muted);line-height:1.5">
+
+      Un resumen de las señales que cada uno
+      ha elegido compartir. No es un diagnóstico
+      psicológico ni adivina emociones.
+
     </p>
 
     <div id="insights"></div>
@@ -682,9 +895,10 @@ label{
     <button
       class="secondary"
       style="width:100%;margin-top:10px"
-      onclick="openModal('checkin')"
-    >
+      onclick="openModal('checkin')">
+
       📝 ¿Cómo me siento hoy?
+
     </button>
 
   </div>
@@ -693,32 +907,41 @@ label{
   <div class="card">
 
     <div class="sectionTitle">
-      <h2>👥 ¿Quién está aquí?</h2>
+
+      <h2>
+        👥 ¿Quién está aquí?
+      </h2>
 
       <button onclick="openModal('profile')">
         Editar
       </button>
+
     </div>
 
-    <p style="color:var(--muted);margin:0">
-      Así la app puede saber quién dejó cada señal,
-      mensaje o interacción.
+    <p
+      style="color:var(--muted);margin:0">
+
+      Así la app puede saber quién dejó cada
+      señal, mensaje o interacción.
+
     </p>
 
     <div class="personbar">
 
       <button
         id="meBtn"
-        onclick="setPerson('yo')"
-      >
+        onclick="setPerson('yo')">
+
         🙋 Yo
+
       </button>
 
       <button
         id="herBtn"
-        onclick="setPerson('ella')"
-      >
+        onclick="setPerson('ella')">
+
         👩 Ella
+
       </button>
 
     </div>
@@ -729,24 +952,32 @@ label{
   <div class="card">
 
     <div class="sectionTitle">
-      <h2>❤️ Intimidad</h2>
+
+      <h2>
+        ❤️ Entre nosotros
+      </h2>
 
       <button onclick="openModal('intimacy')">
         Abrir
       </button>
+
     </div>
 
-    <p style="color:var(--muted);line-height:1.5">
+    <p
+      style="color:var(--muted);line-height:1.5">
+
       Un espacio privado para expresar deseo,
-      cercanía o simplemente dejar claro cómo te sientes.
-      Nada es obligación.
+      cercanía o simplemente dejar claro cómo
+      te sientes. Nada es obligación.
+
     </p>
 
     <button
       class="primary"
-      onclick="openModal('intimacy')"
-    >
-      ❤️ ¿Cómo estoy viviendo nuestra intimidad?
+      onclick="openModal('intimacy')">
+
+      ❤️ Cercanía e intimidad
+
     </button>
 
   </div>
@@ -756,56 +987,103 @@ label{
 
     <button
       class="tile"
-      onclick="openModal('game')"
-    >
+      onclick="openModal('game')">
+
       <div class="ico">🎲</div>
-      <b>Juguemos</b>
-      <span>Preguntas para reírse y conocerse</span>
+
+      <b>
+        Juguemos
+      </b>
+
+      <span>
+        Preguntas para reírse y conocerse
+      </span>
+
     </button>
+
 
     <button
       class="tile"
-      onclick="openModal('love')"
-    >
+      onclick="openModal('love')">
+
       <div class="ico">🥰</div>
-      <b>Te quiero por...</b>
-      <span>Déjale algo bonito</span>
+
+      <b>
+        Te quiero por...
+      </b>
+
+      <span>
+        Déjale algo bonito
+      </span>
+
     </button>
+
 
     <button
       class="tile"
-      onclick="openModal('direct')"
-    >
+      onclick="openModal('direct')">
+
       <div class="ico">💬</div>
-      <b>¿Quieres ser más directo?</b>
-      <span>Escríbele eso que traes en la cabeza</span>
+
+      <b>
+        Escribirle
+      </b>
+
+      <span>
+        Déjale algo para cuando abra NOSOTROS
+      </span>
+
     </button>
+
 
     <button
       class="tile"
-      onclick="openModal('memory')"
-    >
+      onclick="openModal('memory')">
+
       <div class="ico">📸</div>
-      <b>Nuestros recuerdos</b>
-      <span>Guarden lo que quieren recordar</span>
+
+      <b>
+        Nuestros recuerdos
+      </b>
+
+      <span>
+        Guarden lo que quieren recordar
+      </span>
+
     </button>
+
 
     <button
       class="tile"
-      onclick="openModal('date')"
-    >
+      onclick="openModal('date')">
+
       <div class="ico">✨</div>
-      <b>Cita sorpresa</b>
-      <span>Una idea para volver a encontrarse</span>
+
+      <b>
+        Cita sorpresa
+      </b>
+
+      <span>
+        Una idea para volver a encontrarse
+      </span>
+
     </button>
+
 
     <button
       class="tile"
-      onclick="openModal('close')"
-    >
+      onclick="openModal('close')">
+
       <div class="ico">🌙</div>
-      <b>Más cerca</b>
-      <span>Pequeños momentos de cariño y conexión</span>
+
+      <b>
+        Más cerca
+      </b>
+
+      <span>
+        Pequeños momentos de cariño y conexión
+      </span>
+
     </button>
 
   </div>
@@ -813,12 +1091,16 @@ label{
 </section>
 
 
-<section id="discover" class="hidden">
+<section
+  id="discover"
+  class="hidden">
 
   <div class="card">
 
     <div class="sectionTitle">
-      <h2>🎯 Retos de nosotros</h2>
+      <h2>
+        🎯 Retos de nosotros
+      </h2>
     </div>
 
     <div id="challenges"></div>
@@ -829,7 +1111,9 @@ label{
   <div class="card">
 
     <div class="sectionTitle">
-      <h2>🌙 Antes de dormir</h2>
+      <h2>
+        🌙 Antes de dormir
+      </h2>
     </div>
 
     <p style="color:var(--muted)">
@@ -838,9 +1122,10 @@ label{
 
     <button
       class="primary"
-      onclick="openModal('night')"
-    >
+      onclick="openModal('night')">
+
       🌙 Hacer cierre de hoy
+
     </button>
 
   </div>
@@ -848,16 +1133,22 @@ label{
 </section>
 
 
-<section id="messages" class="hidden">
+<section
+  id="messages"
+  class="hidden">
 
   <div class="card">
 
     <div class="sectionTitle">
-      <h2>💌 Lo que nos dejamos</h2>
+
+      <h2>
+        💌 Lo que nos dejamos
+      </h2>
 
       <button onclick="openModal('love')">
         + Nuevo
       </button>
+
     </div>
 
     <div id="messagesList"></div>
@@ -868,20 +1159,28 @@ label{
   <div class="card">
 
     <div class="sectionTitle">
-      <h2>💬 ¿Quieres ser más directo?</h2>
+
+      <h2>
+        💬 Escribirle directamente
+      </h2>
+
     </div>
 
-    <p style="color:var(--muted);line-height:1.5">
-      Escríbele directamente eso que estás pensando,
-      sintiendo o simplemente quieres que sepa.
-      Sin hacerlo perfecto.
+    <p
+      style="color:var(--muted);line-height:1.5">
+
+      Escríbele directamente eso que estás
+      pensando, sintiendo o simplemente quieres
+      que sepa. Sin hacerlo perfecto.
+
     </p>
 
     <button
       class="primary"
-      onclick="openModal('direct')"
-    >
-      ✍️ Escribirle directamente
+      onclick="openModal('direct')">
+
+      ✍️ Escribirle
+
     </button>
 
   </div>
@@ -890,41 +1189,80 @@ label{
   <div class="card">
 
     <div class="sectionTitle">
-      <h2>🫶 Cuando estemos desconectados</h2>
+
+      <h2>
+        💗 Pequeñas señales del día
+      </h2>
+
     </div>
 
     <div class="grid">
 
       <button
         class="tile"
-        onclick="sendNeed('Quiero acercarme ❤️')"
-      >
+        onclick="sendNeed('❤️ Quiero acercarme')">
+
         <div class="ico">❤️</div>
-        <b>Quiero acercarme</b>
+
+        <b>
+          Quiero acercarme
+        </b>
+
+        <span>
+          Cuando tengas un momento
+        </span>
+
       </button>
+
 
       <button
         class="tile"
-        onclick="sendNeed('Necesito un abrazo 🫂')"
-      >
+        onclick="sendNeed('🫂 Te mando un abrazo')">
+
         <div class="ico">🫂</div>
-        <b>Necesito un abrazo</b>
+
+        <b>
+          Te mando un abrazo
+        </b>
+
+        <span>
+          Sin necesidad de responder ahora
+        </span>
+
       </button>
+
 
       <button
         class="tile"
-        onclick="sendNeed('Hazme reír 😂')"
-      >
+        onclick="sendNeed('😂 Hazme reír')">
+
         <div class="ico">😂</div>
-        <b>Hazme reír</b>
+
+        <b>
+          Hazme reír
+        </b>
+
+        <span>
+          Déjame algo para después
+        </span>
+
       </button>
+
 
       <button
         class="tile"
-        onclick="sendNeed('Solo quiero estar contigo 🥹')"
-      >
+        onclick="sendNeed('🥹 Solo quería estar cerca de ti')">
+
         <div class="ico">🥹</div>
-        <b>Solo quiero estar contigo</b>
+
+        <b>
+          Solo quería estar cerca
+        </b>
+
+        <span>
+          Para cuando lo encuentres
+        </span>
+
       </button>
 
     </div>
@@ -935,23 +1273,32 @@ label{
   <div class="card">
 
     <div class="sectionTitle">
-      <h2>🌙 Más cerca</h2>
+
+      <h2>
+        🌙 Más cerca
+      </h2>
 
       <button onclick="openModal('close')">
         Abrir
       </button>
+
     </div>
 
-    <p style="color:var(--muted);line-height:1.5">
-      Una forma discreta de decir “quiero estar cerca de ti”,
-      sin presión y sin tener que explicar demasiado.
+    <p
+      style="color:var(--muted);line-height:1.5">
+
+      Una forma discreta de decir
+      “quiero estar cerca de ti”, sin presión
+      y sin tener que explicar demasiado.
+
     </p>
 
     <button
       class="primary"
-      onclick="openModal('close')"
-    >
+      onclick="openModal('close')">
+
       ✨ Hoy quiero estar más cerca
+
     </button>
 
   </div>
@@ -959,12 +1306,16 @@ label{
 </section>
 
 
-<section id="us" class="hidden">
+<section
+  id="us"
+  class="hidden">
 
   <div class="card">
 
     <div class="sectionTitle">
-      <h2>❤️ Nuestra historia</h2>
+      <h2>
+        ❤️ Nuestra historia
+      </h2>
     </div>
 
     <label>
@@ -973,16 +1324,18 @@ label{
 
     <input
       id="couplePhrase"
-      placeholder="Ej. Siempre volvemos a nosotros."
-    >
+      placeholder="Ej. Siempre volvemos a nosotros.">
 
     <div class="actions">
+
       <button
         class="primary"
-        onclick="savePhrase()"
-      >
+        onclick="savePhrase()">
+
         Guardar
+
       </button>
+
     </div>
 
   </div>
@@ -991,7 +1344,9 @@ label{
   <div class="card">
 
     <div class="sectionTitle">
-      <h2>📊 Nuestros momentos</h2>
+      <h2>
+        📊 Nuestros momentos
+      </h2>
     </div>
 
     <div id="historyStats"></div>
@@ -1002,7 +1357,9 @@ label{
   <div class="card">
 
     <div class="sectionTitle">
-      <h2>🧭 Cómo hemos estado interactuando</h2>
+      <h2>
+        🧭 Cómo hemos estado interactuando
+      </h2>
     </div>
 
     <div id="interactionSummary"></div>
@@ -1013,7 +1370,9 @@ label{
   <div class="card">
 
     <div class="sectionTitle">
-      <h2>🕘 Actividad reciente</h2>
+      <h2>
+        🕘 Actividad reciente
+      </h2>
     </div>
 
     <div id="activityList"></div>
@@ -1023,7 +1382,6 @@ label{
 </section>
 
 </main>
-
 </div>
 
 
@@ -1033,25 +1391,38 @@ label{
 
     <button
       class="active"
-      data-page="home"
-    >
+      data-page="home">
+
       <b>❤️</b>
       Inicio
+
     </button>
 
-    <button data-page="discover">
+
+    <button
+      data-page="discover">
+
       <b>✨</b>
       Descubrir
+
     </button>
 
-    <button data-page="messages">
+
+    <button
+      data-page="messages">
+
       <b>💌</b>
       Mensajes
+
     </button>
 
-    <button data-page="us">
+
+    <button
+      data-page="us">
+
       <b>🫶</b>
       Nosotros
+
     </button>
 
   </div>
@@ -1061,22 +1432,22 @@ label{
 
 <div
   class="toast"
-  id="toast"
-></div>
+  id="toast">
+</div>
 
 
 <div
   class="modal"
-  id="modal"
->
+  id="modal">
 
   <div class="sheet">
 
     <button
       class="close"
-      onclick="closeModal()"
-    >
+      onclick="closeModal()">
+
       ✕
+
     </button>
 
     <div id="modalContent"></div>
@@ -1092,7 +1463,9 @@ label{
 
 "use strict";
 
+
 const KEY="nosotros_v1";
+
 
 const defaultState={
 
@@ -1214,120 +1587,120 @@ function toast(t){
 
 const missions=[
 
-  [
-    "Una foto que te recordó a mí 📸",
-    "Mándale una foto de algo pequeño que hoy te hizo pensar en tu pareja."
-  ],
+[
+  "Una foto que te recordó a mí 📸",
+  "Mándale una foto de algo pequeño que hoy te hizo pensar en tu pareja."
+],
 
-  [
-    "Dime algo que admires de mí 🥰",
-    "Dile una cosa que admiras de tu pareja y que quizá no dices seguido."
-  ],
+[
+  "Dime algo que admires de mí 🥰",
+  "Dile una cosa que admiras de tu pareja y que quizá no dices seguido."
+],
 
-  [
-    "Sin teléfonos por 10 minutos 📵",
-    "Regálense diez minutos juntos sin pantallas."
-  ],
+[
+  "Sin teléfonos por 10 minutos 📵",
+  "Regálense diez minutos juntos sin pantallas."
+],
 
-  [
-    "Una canción para nosotros 🎵",
-    "Mándale una canción y cuéntale por qué hoy la elegiste."
-  ],
+[
+  "Una canción para nosotros 🎵",
+  "Mándale una canción y cuéntale por qué hoy la elegiste."
+],
 
-  [
-    "Recuerda nuestra mejor cita ✨",
-    "Hablen de una cita que recuerden con especial cariño."
-  ],
+[
+  "Recuerda nuestra mejor cita ✨",
+  "Hablen de una cita que recuerden con especial cariño."
+],
 
-  [
-    "Hazme reír 😂",
-    "Mándale algo que sabes que le va a sacar una sonrisa."
-  ],
+[
+  "Hazme reír 😂",
+  "Mándale algo que sabes que le va a sacar una sonrisa."
+],
 
-  [
-    "Un abrazo largo 🫂",
-    "Dense un abrazo de al menos 30 segundos sin hablar."
-  ]
+[
+  "Un abrazo largo 🫂",
+  "Dense un abrazo de al menos 30 segundos sin hablar."
+]
 
 ];
 
 
 const questions=[
 
-  "¿Qué fue lo mejor de tu día?",
+"¿Qué fue lo mejor de tu día?",
 
-  "¿Qué te gustaría que hiciéramos juntos este fin de semana?",
+"¿Qué te gustaría que hiciéramos juntos este fin de semana?",
 
-  "¿Qué recuerdo de nosotros te hace sonreír inmediatamente?",
+"¿Qué recuerdo de nosotros te hace sonreír inmediatamente?",
 
-  "¿Qué cosa pequeña hago que te hace sentir querido/a?",
+"¿Qué cosa pequeña hago que te hace sentir querido/a?",
 
-  "Si mañana pudiéramos escaparnos juntos, ¿a dónde iríamos?",
+"Si mañana pudiéramos escaparnos juntos, ¿a dónde iríamos?",
 
-  "¿Qué te gustaría que aprendiéramos o hiciéramos juntos?",
+"¿Qué te gustaría que aprendiéramos o hiciéramos juntos?",
 
-  "¿Qué necesitas de mí esta semana?",
+"¿Qué necesitas de mí esta semana?",
 
-  "¿Qué fue algo divertido que nunca quieres que olvidemos?"
+"¿Qué fue algo divertido que nunca quieres que olvidemos?"
 
 ];
 
 
 const games=[
 
-  [
-    "¿Quién es más probable que...?",
-    "Se despierte primero",
-    "Se ría en el peor momento",
-    "Proponga una escapada improvisada",
-    "Se quede dormido viendo una película"
-  ],
+[
+  "¿Quién es más probable que...?",
+  "Se despierte primero",
+  "Se ría en el peor momento",
+  "Proponga una escapada improvisada",
+  "Se quede dormido viendo una película"
+],
 
-  [
-    "¿Qué prefieres para una cita?",
-    "Cena y caminar",
-    "Película y comida",
-    "Manejar sin destino",
-    "Quedarnos en casa juntos"
-  ],
+[
+  "¿Qué prefieres para una cita?",
+  "Cena y caminar",
+  "Película y comida",
+  "Manejar sin destino",
+  "Quedarnos en casa juntos"
+],
 
-  [
-    "Completa la frase",
-    "Me enamora de ti...",
-    "Me da risa cuando...",
-    "Quiero vivir contigo...",
-    "Nuestro próximo recuerdo debería ser..."
-  ]
+[
+  "Completa la frase",
+  "Me enamora de ti...",
+  "Me da risa cuando...",
+  "Quiero vivir contigo...",
+  "Nuestro próximo recuerdo debería ser..."
+]
 
 ];
 
 
 const challenges=[
 
-  [
-    "Cita sin gastar",
-    "Tengan una cita en casa o salgan a caminar. Lo importante es estar juntos."
-  ],
+[
+  "Cita sin gastar",
+  "Tengan una cita en casa o salgan a caminar. Lo importante es estar juntos."
+],
 
-  [
-    "10 minutos sin celulares",
-    "Dejen los teléfonos lejos y hablen de cualquier cosa menos pendientes."
-  ],
+[
+  "10 minutos sin celulares",
+  "Dejen los teléfonos lejos y hablen de cualquier cosa menos pendientes."
+],
 
-  [
-    "Tres cosas bonitas",
-    "Cada uno diga tres cosas que agradece del otro."
-  ],
+[
+  "Tres cosas bonitas",
+  "Cada uno diga tres cosas que agradece del otro."
+],
 
-  [
-    "Foto del día",
-    "Guarden una foto que represente cómo se sintieron juntos."
-  ],
+[
+  "Foto del día",
+  "Guarden una foto que represente cómo se sintieron juntos."
+],
 
-  [
-    "Sorpresa pequeña",
-    "Uno de los dos haga algo pequeño que el otro no espere."
-  ]
+[
+  "Sorpresa pequeña",
+  "Uno de los dos haga algo pequeño que el otro no espere."
+]
 
 ];
 
@@ -1361,7 +1734,6 @@ function addActivity(
   state.activity.push(
 
     Object.assign(
-
       {
         type,
         text,
@@ -1369,9 +1741,7 @@ function addActivity(
         authorName:personName(),
         date:new Date().toISOString()
       },
-
       extra
-
     )
 
   );
@@ -1394,9 +1764,7 @@ function recentItems(days=7){
 
   return (state.activity||[])
     .filter(
-      x=>
-        new Date(x.date).getTime()
-        >=since
+      x=>new Date(x.date).getTime()>=since
     );
 
 }
@@ -1451,21 +1819,15 @@ function render(){
 
   const idx=
     Math.floor(
-      (
-        new Date()
-        .setHours(0,0,0,0)
-        /
-        86400000
-      )
-    )
-    %
-    missions.length;
+      new Date().setHours(
+        0,0,0,0
+      )/86400000
+    )%missions.length;
 
 
   const m=
     missions[
-      (idx+missions.length)
-      %
+      (idx+missions.length)%
       missions.length
     ];
 
@@ -1534,14 +1896,15 @@ function render(){
     "progressText"
   ).textContent=
     p
-    ?"Ya llevan "+(state.moments%10)+" momentos"
+    ?"Ya llevan "+
+      (state.moments%10)+
+      " momentos"
     :"Construyan un momento hoy.";
 
 
   document.getElementById(
     "messagesList"
   ).innerHTML=
-
     state.messages.length
 
     ?
@@ -1550,43 +1913,55 @@ function render(){
       .slice()
       .reverse()
       .map(
-        x=>`
 
-          <div class="message">
+        x=>
 
-            <small>
+        `<div class="message">
 
-              ${
-                x.kind==="direct"
-                ?"💬 Mensaje directo · "
-                :""
-              }
+          <small>
 
-              ${
-                esc(
-                  x.authorName
-                  ||
-                  x.author
-                  ||
-                  ""
-                )
-              }
+            ${
+              x.kind==="direct"
+              ?"💬 Mensaje directo · "
+              :
+              x.kind==="five"
+              ?"⏱️ 5 minutos · "
+              :
+              "💌 Mensaje · "
+            }
 
-              ·
+            ${esc(x.authorName||"")}
+            ·
+            ${esc(x.date)}
 
-              ${esc(x.date)}
+          </small>
 
-            </small>
+          ${
+            x.kind==="five"
 
-            <div
-              style="margin-top:5px;line-height:1.45"
-            >
-              ${esc(x.text)}
-            </div>
+            ?
+
+            `<div class="badge">
+              ${esc(
+                x.question||
+                "Pregunta de hoy"
+              )}
+            </div>`
+
+            :
+
+            ""
+          }
+
+          <div
+            style="margin-top:5px;line-height:1.45">
+
+            ${esc(x.text)}
 
           </div>
 
-        `
+        </div>`
+
       )
       .join("")
 
@@ -1601,44 +1976,45 @@ function render(){
 
     challenges
       .map(
-        (c,i)=>`
 
-          <div class="challenge ${
-            state.challenges[i]
-            ?"done"
-            :""
-          }">
+        (c,i)=>
 
-            <div class="tag">
-              Reto ${i+1}
-            </div>
+        `<div class="challenge ${
+          state.challenges[i]
+          ?"done"
+          :""
+        }">
 
-            <h3>
-              ${esc(c[0])}
-            </h3>
+          <div class="tag">
+            Reto ${i+1}
+          </div>
 
-            <p>
-              ${esc(c[1])}
-            </p>
+          <h3>
+            ${c[0]}
+          </h3>
 
-            <div class="actions">
+          <p>
+            ${c[1]}
+          </p>
 
-              <button
-                class="secondary"
-                onclick="challenge(${i})"
-              >
-                ${
-                  state.challenges[i]
-                  ?"✅ Hecho"
-                  :"Aceptar reto"
-                }
-              </button>
+          <div class="actions">
 
-            </div>
+            <button
+              class="secondary"
+              onclick="challenge(${i})">
+
+              ${
+                state.challenges[i]
+                ?"✅ Hecho"
+                :"Aceptar reto"
+              }
+
+            </button>
 
           </div>
 
-        `
+        </div>`
+
       )
       .join("");
 
@@ -1651,16 +2027,12 @@ function render(){
 
   renderInsights();
 
-  renderInteractionSummary();
-
-  renderActivity();
-
 
   document.getElementById(
     "historyStats"
-  ).innerHTML=`
+  ).innerHTML=
 
-    <div class="statrow">
+    `<div class="statrow">
 
       <div class="stat">
         <strong>${state.moments}</strong>
@@ -1681,8 +2053,7 @@ function render(){
 
     <div
       class="statrow"
-      style="margin-top:8px"
-    >
+      style="margin-top:8px">
 
       <div class="stat">
         <strong>${state.checkins.length}</strong>
@@ -1699,9 +2070,7 @@ function render(){
         <small>mensajes</small>
       </div>
 
-    </div>
-
-  `;
+    </div>`;
 
 }
 
@@ -1717,11 +2086,6 @@ window.completeToday=function(){
   state.todayDone[
     dayKey()
   ]=true;
-
-  addActivity(
-    "moment",
-    "Completó el momento de hoy"
-  );
 
   state.moments++;
 
@@ -1742,15 +2106,7 @@ window.challenge=function(i){
   if(
     state.challenges[i]
   ){
-
-    addActivity(
-      "moment",
-      "Completó el reto: "+
-      challenges[i][0]
-    );
-
     state.moments++;
-
   }
 
   save();
@@ -1759,391 +2115,6 @@ window.challenge=function(i){
     state.challenges[i]
     ?"🎯 Reto cumplido"
     :"Reto abierto otra vez"
-  );
-
-};
-
-
-window.setPerson=function(who){
-
-  state.currentUser=who;
-
-  render();
-
-  toast(
-    "Ahora eres "+
-    personName()
-  );
-
-};
-
-
-window.saveProfile=function(){
-
-  const a=
-    (
-      document.getElementById(
-        "nameYo"
-      )?.value
-      ||
-      "Yo"
-    ).trim()
-    ||
-    "Yo";
-
-
-  const b=
-    (
-      document.getElementById(
-        "nameElla"
-      )?.value
-      ||
-      "Ella"
-    ).trim()
-    ||
-    "Ella";
-
-
-  state.profile.yo=a;
-
-  state.profile.ella=b;
-
-  save();
-
-  closeModal();
-
-  toast(
-    "👥 Nombres guardados"
-  );
-
-};
-
-
-window.saveIntimacy=function(
-  type,
-  label
-){
-
-  state.intimacy.push({
-
-    type,
-
-    label,
-
-    date:
-      new Date().toISOString(),
-
-    author:
-      state.currentUser,
-
-    authorName:
-      personName()
-
-  });
-
-
-  addActivity(
-    "intimacy",
-    label
-  );
-
-
-  state.moments++;
-
-  save();
-
-  closeModal();
-
-  toast(
-    label+
-    " guardado"
-  );
-
-};
-
-
-function renderInteractionSummary(){
-
-  const el=
-    document.getElementById(
-      "interactionSummary"
-    );
-
-  if(!el)return;
-
-
-  const recent=
-    recentItems(7);
-
-
-  const make=who=>{
-
-    const arr=
-      recent.filter(
-        x=>
-          (x.author||"yo")
-          ===who
-      );
-
-
-    const direct=
-      arr.filter(
-        x=>x.type==="direct"
-      ).length;
-
-
-    const signals=
-      arr.filter(
-        x=>x.type==="checkin"
-      ).length;
-
-
-    const intimate=
-      arr.filter(
-        x=>x.type==="intimacy"
-      ).length;
-
-
-    const total=
-      arr.length;
-
-
-    return `
-
-      <div class="signalBox">
-
-        <b>
-          ${
-            who==="yo"
-            ?"🙋"
-            :"👩"
-          }
-
-          ${esc(
-            state.profile[who]
-          )}
-
-        </b>
-
-        <p
-          style="
-            color:var(--muted);
-            line-height:1.45;
-            margin:7px 0 0
-          "
-        >
-
-          ${total}
-          interacciones esta semana
-
-          ·
-
-          ${direct}
-          directas
-
-          ·
-
-          ${signals}
-          señales
-
-          ·
-
-          ${intimate}
-          de intimidad
-
-        </p>
-
-      </div>
-
-    `;
-
-  };
-
-
-  el.innerHTML=
-    make("yo")+
-    make("ella");
-
-}
-
-
-function renderActivity(){
-
-  const el=
-    document.getElementById(
-      "activityList"
-    );
-
-  if(!el)return;
-
-
-  const arr=
-    (state.activity||[])
-      .slice()
-      .reverse()
-      .slice(0,20);
-
-
-  if(!arr.length){
-
-    el.innerHTML=
-      '<div class="empty">Todavía no hay actividad registrada.</div>';
-
-    return;
-
-  }
-
-
-  const icon={
-
-    direct:"💬",
-
-    message:"💌",
-
-    checkin:"🧭",
-
-    intimacy:"❤️",
-
-    moment:"✨"
-
-  };
-
-
-  el.innerHTML=
-
-    arr
-      .map(
-        (x,i)=>`
-
-          <div class="activity">
-
-            <div class="dot">
-              ${icon[x.type]||"💞"}
-            </div>
-
-            <div style="flex:1">
-
-              <b>
-                ${
-                  esc(
-                    x.authorName
-                    ||
-                    x.author
-                    ||
-                    "Alguien"
-                  )
-                }
-              </b>
-
-              <div
-                style="margin-top:3px"
-              >
-                ${esc(x.text||"")}
-              </div>
-
-              <span class="badge">
-
-                ${
-                  new Date(
-                    x.date
-                  ).toLocaleString(
-                    "es-MX",
-                    {
-                      dateStyle:"short",
-                      timeStyle:"short"
-                    }
-                  )
-                }
-
-              </span>
-
-              ${
-                x.reaction
-                ?
-                `<div style="margin-top:6px;color:#ffb5cc">
-                  ${esc(x.reaction)}
-                  · ${esc(x.reactedByName||"")}
-                </div>`
-                :""
-              }
-
-            </div>
-
-            <div class="reactions">
-
-              <button
-                onclick="reactActivity(${i},'❤️')"
-              >
-                ❤️
-              </button>
-
-              <button
-                onclick="reactActivity(${i},'🫶')"
-              >
-                🫶
-              </button>
-
-              <button
-                onclick="reactActivity(${i},'🥰')"
-              >
-                🥰
-              </button>
-
-            </div>
-
-          </div>
-
-        `
-      )
-      .join("");
-
-}
-
-
-window.reactActivity=function(
-  reversedIndex,
-  emoji
-){
-
-  const arr=
-    (state.activity||[])
-      .slice()
-      .reverse();
-
-
-  const item=
-    arr[reversedIndex];
-
-
-  if(!item)return;
-
-
-  item.reaction=emoji;
-
-  item.reactedBy=
-    state.currentUser;
-
-  item.reactedByName=
-    personName();
-
-  item.reactedAt=
-    new Date().toISOString();
-
-
-  state.activity=
-    state.activity.map(
-      x=>
-        x===item
-        ?item
-        :x
-    );
-
-
-  save();
-
-  toast(
-    emoji+
-    " Reacción guardada"
   );
 
 };
@@ -2159,15 +2130,17 @@ window.openModal=function(type){
     c=`
 
       <h2>
-        ❤️ 5 minutos
+        ⏱️ 5 minutos
       </h2>
 
       <p
-        style="color:var(--muted)"
-      >
-        Elijan una pregunta,
-        mírense y hablen.
-        No hace falta resolver nada.
+        style="color:var(--muted);line-height:1.5">
+
+        No tienen que estar juntos.
+        Si tienes un espacio durante el día,
+        responde aquí y déjale algo para
+        encontrar después.
+
       </p>
 
       <div class="challenge">
@@ -2189,20 +2162,27 @@ window.openModal=function(type){
 
       </div>
 
+      <textarea
+        id="fiveAnswer"
+        placeholder="Tu respuesta para ella...">
+      </textarea>
+
       <button
         class="primary"
-        onclick="newQuestion()"
-      >
+        onclick="newQuestion()">
+
         🎲 Otra pregunta
+
       </button>
 
       <div class="actions">
 
         <button
           class="secondary"
-          onclick="completeFive()"
-        >
-          ❤️ Lo hicimos
+          onclick="saveFiveResponse()">
+
+          💌 Dejar mi respuesta
+
         </button>
 
       </div>
@@ -2218,9 +2198,7 @@ window.openModal=function(type){
         🎲 Juguemos
       </h2>
 
-      <p
-        style="color:var(--muted)"
-      >
+      <p style="color:var(--muted)">
         Un juego rápido para distraerse juntos.
       </p>
 
@@ -2244,18 +2222,20 @@ window.openModal=function(type){
 
       <button
         class="primary"
-        onclick="newGame()"
-      >
+        onclick="newGame()">
+
         🎲 Otra
+
       </button>
 
       <div class="actions">
 
         <button
           class="secondary"
-          onclick="completeGame()"
-        >
+          onclick="completeGame()">
+
           😂 Nos reímos
+
         </button>
 
       </div>
@@ -2271,26 +2251,26 @@ window.openModal=function(type){
         🥰 Te quiero por...
       </h2>
 
-      <p
-        style="color:var(--muted)"
-      >
+      <p style="color:var(--muted)">
+
         Escribe algo que quieras dejarle
-        a tu pareja.
-        No tiene que ser perfecto.
+        a tu pareja. No tiene que ser perfecto.
+
       </p>
 
       <textarea
         id="loveText"
-        placeholder="Hoy te quiero por..."
-      ></textarea>
+        placeholder="Hoy te quiero por...">
+      </textarea>
 
       <div class="actions">
 
         <button
           class="primary"
-          onclick="saveLove()"
-        >
+          onclick="saveLove()">
+
           💌 Dejar mensaje
+
         </button>
 
       </div>
@@ -2307,13 +2287,14 @@ window.openModal=function(type){
       </h2>
 
       <p
-        style="color:var(--muted);line-height:1.5"
-      >
-        Escríbele eso que traes en la cabeza.
-        Puede ser un pensamiento,
-        algo que quieres decirle,
-        algo que te gustaría vivir juntos
-        o simplemente algo que quieres que sepa.
+        style="color:var(--muted);line-height:1.5">
+
+        Escríbele algo que quieres que
+        encuentre cuando abra NOSOTROS.
+        Puede ser un pensamiento, algo bonito,
+        una idea o simplemente
+        “me acordé de ti”.
+
       </p>
 
       <div class="challenge">
@@ -2334,16 +2315,17 @@ window.openModal=function(type){
 
       <textarea
         id="directText"
-        placeholder="Quiero decirte que..."
-      ></textarea>
+        placeholder="Quiero decirte que...">
+      </textarea>
 
       <div class="actions">
 
         <button
           class="primary"
-          onclick="saveDirect()"
-        >
+          onclick="saveDirect()">
+
           💌 Dejarle este mensaje
+
         </button>
 
       </div>
@@ -2365,16 +2347,17 @@ window.openModal=function(type){
 
       <textarea
         id="memText"
-        placeholder="Hoy nosotros..."
-      ></textarea>
+        placeholder="Hoy nosotros...">
+      </textarea>
 
       <div class="actions">
 
         <button
           class="primary"
-          onclick="saveMemory()"
-        >
+          onclick="saveMemory()">
+
           📸 Guardar recuerdo
+
         </button>
 
       </div>
@@ -2404,9 +2387,10 @@ window.openModal=function(type){
 
       <button
         class="primary"
-        onclick="newDateIdea()"
-      >
+        onclick="newDateIdea()">
+
         🎲 Sorpréndeme otra vez
+
       </button>
 
     `;
@@ -2421,58 +2405,89 @@ window.openModal=function(type){
       </h2>
 
       <p
-        style="color:var(--muted);line-height:1.5"
-      >
+        style="color:var(--muted);line-height:1.5">
+
         Elige cómo te gustaría conectar hoy.
-        No es una obligación:
-        es solo una señal para abrir
-        la puerta a un momento de ustedes.
+        No es una obligación: es solo una señal
+        para abrir la puerta a un momento de ustedes.
+
       </p>
 
       <div class="grid">
 
         <button
           class="tile"
-          onclick="closeSignal('🫂 Hoy quiero mimos')"
-        >
+          onclick="closeSignal('🫂 Hoy quiero mimos')">
+
           <div class="ico">🫂</div>
-          <b>Quiero mimos</b>
-          <span>Abrazos y cariño</span>
+
+          <b>
+            Quiero mimos
+          </b>
+
+          <span>
+            Abrazos y cariño
+          </span>
+
         </button>
+
 
         <button
           class="tile"
-          onclick="closeSignal('💋 Hoy quiero besarte')"
-        >
+          onclick="closeSignal('💋 Hoy quiero besarte')">
+
           <div class="ico">💋</div>
-          <b>Quiero besarte</b>
-          <span>Un momento de cercanía</span>
+
+          <b>
+            Quiero besarte
+          </b>
+
+          <span>
+            Un momento de cercanía
+          </span>
+
         </button>
+
 
         <button
           class="tile"
-          onclick="closeSignal('✨ Quiero estar muy cerca')"
-        >
+          onclick="closeSignal('✨ Quiero estar muy cerca')">
+
           <div class="ico">✨</div>
-          <b>Quiero estar muy cerca</b>
-          <span>Sin prisas, solo nosotros</span>
+
+          <b>
+            Quiero estar muy cerca
+          </b>
+
+          <span>
+            Sin prisas, solo nosotros
+          </span>
+
         </button>
+
 
         <button
           class="tile"
-          onclick="closeSignal('😉 Tengo una idea')"
-        >
+          onclick="closeSignal('😉 Tengo una idea')">
+
           <div class="ico">😉</div>
-          <b>Tengo una idea</b>
-          <span>Déjate sorprender</span>
+
+          <b>
+            Tengo una idea
+          </b>
+
+          <span>
+            Déjate sorprender
+          </span>
+
         </button>
 
       </div>
 
+
       <div
         class="challenge"
-        style="margin-top:14px"
-      >
+        style="margin-top:14px">
 
         <div class="tag">
           Señal secreta
@@ -2491,9 +2506,10 @@ window.openModal=function(type){
 
           <button
             class="primary"
-            onclick="closeSignal('✨ Hoy quiero estar más cerca de ti')"
-          >
+            onclick="closeSignal('✨ Hoy quiero estar más cerca de ti')">
+
             ❤️ Enviar señal
+
           </button>
 
         </div>
@@ -2533,9 +2549,10 @@ window.openModal=function(type){
 
         <button
           class="primary"
-          onclick="saveNight()"
-        >
+          onclick="saveNight()">
+
           🌙 Guardarlo
+
         </button>
 
       </div>
@@ -2552,86 +2569,150 @@ window.openModal=function(type){
       </h2>
 
       <p
-        style="color:var(--muted);line-height:1.5"
-      >
+        style="color:var(--muted);line-height:1.5">
+
         Elige solo lo que quieras compartir.
         Esto permite que NOSOTROS muestre
-        patrones de interacción,
-        no diagnósticos.
+        patrones de interacción, no diagnósticos.
+
       </p>
 
       <div class="grid">
 
         <button
           class="tile"
-          onclick="saveCheckin('cariño','🥰 Cariño')"
-        >
+          onclick="saveCheckin('cariño','🥰 Cariño')">
+
           <div class="ico">🥰</div>
-          <b>Me siento cariñoso/a</b>
-          <span>Quiero dar o recibir cariño</span>
+
+          <b>
+            Me siento cariñoso/a
+          </b>
+
+          <span>
+            Quiero dar o recibir cariño
+          </span>
+
         </button>
+
 
         <button
           class="tile"
-          onclick="saveCheckin('conexion','🫶 Conexión')"
-        >
+          onclick="saveCheckin('conexion','🫶 Conexión')">
+
           <div class="ico">🫶</div>
-          <b>Busco conexión</b>
-          <span>Quiero hablar o compartir</span>
+
+          <b>
+            Busco conexión
+          </b>
+
+          <span>
+            Quiero hablar o compartir
+          </span>
+
         </button>
+
 
         <button
           class="tile"
-          onclick="saveCheckin('cercania','✨ Cercanía')"
-        >
+          onclick="saveCheckin('cercania','✨ Cercanía')">
+
           <div class="ico">✨</div>
-          <b>Busco cercanía</b>
-          <span>Quiero estar más cerca</span>
+
+          <b>
+            Busco cercanía
+          </b>
+
+          <span>
+            Quiero estar más cerca
+          </span>
+
         </button>
+
 
         <button
           class="tile"
-          onclick="saveCheckin('diversion','😂 Diversión')"
-        >
+          onclick="saveCheckin('diversion','😂 Diversión')">
+
           <div class="ico">😂</div>
-          <b>Quiero divertirme</b>
-          <span>Necesito reír y distraerme</span>
+
+          <b>
+            Quiero divertirme
+          </b>
+
+          <span>
+            Necesito reír y distraerme
+          </span>
+
         </button>
+
 
         <button
           class="tile"
-          onclick="saveCheckin('apoyo','🫂 Apoyo')"
-        >
+          onclick="saveCheckin('apoyo','🫂 Apoyo')">
+
           <div class="ico">🫂</div>
-          <b>Necesito apoyo</b>
-          <span>Me vendría bien compañía</span>
+
+          <b>
+            Necesito apoyo
+          </b>
+
+          <span>
+            Me vendría bien compañía
+          </span>
+
         </button>
+
 
         <button
           class="tile"
-          onclick="saveCheckin('tristeza','🌧️ Tristeza')"
-        >
+          onclick="saveCheckin('tristeza','🌧️ Tristeza')">
+
           <div class="ico">🌧️</div>
-          <b>Me siento triste</b>
-          <span>Yo lo estoy diciendo, no la app</span>
+
+          <b>
+            Me siento triste
+          </b>
+
+          <span>
+            Yo lo estoy diciendo,
+            no la app
+          </span>
+
         </button>
+
 
         <button
           class="tile"
-          onclick="saveCheckin('tranquilo','🌿 Tranquilidad')"
-        >
+          onclick="saveCheckin('tranquilo','🌿 Tranquilidad')">
+
           <div class="ico">🌿</div>
-          <b>Estoy tranquilo/a</b>
-          <span>Hoy me siento en calma</span>
+
+          <b>
+            Estoy tranquilo/a
+          </b>
+
+          <span>
+            Hoy me siento en calma
+          </span>
+
         </button>
+
 
         <button
           class="tile"
-          onclick="saveCheckin('sorpresa','😉 Sorpresa')"
-        >
+          onclick="saveCheckin('sorpresa','😉 Sorpresa')">
+
           <div class="ico">😉</div>
-          <b>Quiero sorprender</b>
-          <span>Hoy quiero provocar una sonrisa</span>
+
+          <b>
+            Quiero sorprender
+          </b>
+
+          <span>
+            Hoy quiero provocar una sonrisa
+          </span>
+
         </button>
 
       </div>
@@ -2648,12 +2729,12 @@ window.openModal=function(type){
       </h2>
 
       <p
-        style="color:var(--muted);line-height:1.5"
-      >
-        Cada interacción queda marcada
-        con quién la hizo.
-        Esto solo identifica lo que se
-        registra en este dispositivo.
+        style="color:var(--muted);line-height:1.5">
+
+        Cada interacción queda marcada con
+        quién la hizo. Esto solo identifica
+        lo que se registra en este dispositivo.
+
       </p>
 
       <label>
@@ -2662,8 +2743,9 @@ window.openModal=function(type){
 
       <input
         id="nameYo"
-        value="${esc(state.profile.yo||"Yo")}"
-      >
+        value="${esc(
+          state.profile.yo||"Yo"
+        )}">
 
       <label>
         Nombre de “Ella”
@@ -2671,16 +2753,18 @@ window.openModal=function(type){
 
       <input
         id="nameElla"
-        value="${esc(state.profile.ella||"Ella")}"
-      >
+        value="${esc(
+          state.profile.ella||"Ella"
+        )}">
 
       <div class="actions">
 
         <button
           class="primary"
-          onclick="saveProfile()"
-        >
+          onclick="saveProfile()">
+
           Guardar nombres
+
         </button>
 
       </div>
@@ -2693,15 +2777,16 @@ window.openModal=function(type){
     c=`
 
       <h2>
-        ❤️ Nuestra intimidad
+        ❤️ Entre nosotros
       </h2>
 
       <p
-        style="color:var(--muted);line-height:1.5"
-      >
+        style="color:var(--muted);line-height:1.5">
+
         Elige solo lo que quieras compartir.
         No es una obligación y no intenta
         adivinar nada.
+
       </p>
 
       <div class="intimacyGrid">
@@ -2710,87 +2795,84 @@ window.openModal=function(type){
           onclick="saveIntimacy(
             'deseo',
             '🔥 Me gustaría tener intimidad'
-          )"
-        >
+          )">
+
           <b>
             🔥 Me gustaría tener intimidad
           </b>
+
           <span>
             Quiero abrir esa puerta.
           </span>
+
         </button>
+
 
         <button
           onclick="saveIntimacy(
             'cercania',
             '🫶 Busco más cercanía'
-          )"
-        >
+          )">
+
           <b>
             🫶 Busco más cercanía
           </b>
+
           <span>
             Quiero cariño y conexión.
           </span>
+
         </button>
+
 
         <button
           onclick="saveIntimacy(
             'hablar',
             '💬 Quiero hablar de nuestra intimidad'
-          )"
-        >
+          )">
+
           <b>
             💬 Quiero hablar de esto
           </b>
+
           <span>
             Quiero sentirme escuchado/a.
           </span>
+
         </button>
+
 
         <button
           onclick="saveIntimacy(
             'momento',
             '❤️ Tuvimos un momento íntimo'
-          )"
-        >
+          )">
+
           <b>
             ❤️ Tuvimos un momento íntimo
           </b>
+
           <span>
             Registrar el momento juntos.
           </span>
-        </button>
 
-        <button
-          onclick="saveIntimacy(
-            'pausa',
-            '🌿 Hoy prefiero no'
-          )"
-        >
-          <b>
-            🌿 Hoy prefiero no
-          </b>
-          <span>
-            También está bien poner una pausa.
-          </span>
         </button>
 
       </div>
 
+
       <div
         class="challenge"
-        style="margin-top:14px"
-      >
+        style="margin-top:14px">
 
         <div class="tag">
           Privado y sin presión
         </div>
 
         <p>
-          La app registra la señal que tú eliges
-          compartir; no interpreta ni diagnostica
-          tus emociones.
+          La app registra la señal que tú
+          eliges compartir; no interpreta ni
+          diagnostica tus emociones.
         </p>
 
       </div>
@@ -2807,17 +2889,14 @@ window.openModal=function(type){
       </h2>
 
       <p
-        style="color:var(--muted);line-height:1.5"
-      >
+        style="color:var(--muted);line-height:1.5">
+
         Esta primera versión guarda la información
-        en este dispositivo.
-        Las señales emocionales son auto-reportadas
-        por cada persona y la app no diagnostica
-        ni concluye estados psicológicos.
-        Para que tú y tu pareja vean exactamente
-        los mismos datos desde iPhone y Android,
-        después podemos conectar este espacio
-        a una base de datos/código de pareja.
+        en este dispositivo. Las señales emocionales
+        son auto-reportadas por cada persona y la
+        app no diagnostica ni concluye estados
+        psicológicos.
+
       </p>
 
       <div class="challenge">
@@ -2827,9 +2906,11 @@ window.openModal=function(type){
         </b>
 
         <p style="color:var(--muted)">
+
           No es una app para vigilar ubicación,
           mensajes privados ni actividad.
           Es un espacio voluntario para conectar.
+
         </p>
 
       </div>
@@ -2841,11 +2922,12 @@ window.openModal=function(type){
         </b>
 
         <p style="color:var(--muted)">
+
           Los mensajes de esta versión se guardan
-          en este dispositivo.
-          Al conectar el código de pareja,
-          estos mensajes podrán llegar al otro
-          teléfono y mostrar quién los escribió.
+          en este dispositivo. Al conectar el código
+          de pareja, estos mensajes podrán llegar al
+          otro teléfono y mostrar quién los escribió.
+
         </p>
 
       </div>
@@ -2863,8 +2945,9 @@ window.openModal=function(type){
   ).style.display="flex";
 
 
-  if(type==="date")
+  if(type==="date"){
     newDateIdea();
+  }
 
 };
 
@@ -2883,6 +2966,7 @@ window.newQuestion=function(){
   document.getElementById(
     "q"
   ).textContent=
+
     questions[
       Math.floor(
         Math.random()*
@@ -2898,6 +2982,7 @@ window.newGame=function(){
   document.getElementById(
     "gameQ"
   ).textContent=
+
     games[0][
       Math.floor(
         Math.random()*4
@@ -2951,11 +3036,6 @@ window.newDateIdea=function(){
 
 window.completeFive=function(){
 
-  addActivity(
-    "moment",
-    "Tuvieron 5 minutos para ustedes"
-  );
-
   state.moments++;
 
   save();
@@ -2969,12 +3049,74 @@ window.completeFive=function(){
 };
 
 
-window.completeGame=function(){
+window.saveFiveResponse=function(){
+
+  const answer=
+    document
+      .getElementById("fiveAnswer")
+      ?.value
+      .trim();
+
+
+  const q=
+    document
+      .getElementById("q")
+      ?.textContent
+      .trim();
+
+
+  if(!answer){
+
+    return toast(
+      "Escribe tu respuesta primero ❤️"
+    );
+
+  }
+
+
+  state.messages.push({
+
+    kind:"five",
+
+    question:q,
+
+    text:answer,
+
+    date:new Date()
+      .toLocaleString("es-MX"),
+
+    author:state.currentUser,
+
+    authorName:personName()
+
+  });
+
 
   addActivity(
-    "moment",
-    "Jugaron juntos"
+    "message",
+    "Respondió la pregunta de 5 minutos",
+    {
+      question:q
+    }
   );
+
+
+  state.love++;
+
+  state.moments++;
+
+  save();
+
+  closeModal();
+
+  toast(
+    "💌 Tu respuesta quedó para cuando la encuentre"
+  );
+
+};
+
+
+window.completeGame=function(){
 
   state.games++;
 
@@ -3000,33 +3142,32 @@ window.saveLove=function(){
       .trim();
 
 
-  if(!t)
+  if(!t){
 
     return toast(
       "Escribe algo primero ❤️"
     );
+
+  }
 
 
   state.messages.push({
 
     text:t,
 
-    date:
-      new Date()
+    date:new Date()
       .toLocaleString("es-MX"),
 
-    author:
-      state.currentUser,
+    author:state.currentUser,
 
-    authorName:
-      personName()
+    authorName:personName()
 
   });
 
 
   addActivity(
     "message",
-    "Dejó un mensaje bonito"
+    "Dejó un mensaje"
   );
 
 
@@ -3054,11 +3195,13 @@ window.saveDirect=function(){
       .trim();
 
 
-  if(!t)
+  if(!t){
 
     return toast(
       "Escribe lo que quieres decirle ❤️"
     );
+
+  }
 
 
   state.messages.push({
@@ -3067,15 +3210,12 @@ window.saveDirect=function(){
 
     text:t,
 
-    date:
-      new Date()
+    date:new Date()
       .toLocaleString("es-MX"),
 
-    author:
-      state.currentUser,
+    author:state.currentUser,
 
-    authorName:
-      personName()
+    authorName:personName()
 
   });
 
@@ -3110,34 +3250,23 @@ window.saveMemory=function(){
       .trim();
 
 
-  if(!t)
+  if(!t){
 
     return toast(
       "Escribe el recuerdo primero"
     );
+
+  }
 
 
   state.memories.push({
 
     text:t,
 
-    date:
-      new Date()
-      .toLocaleString("es-MX"),
-
-    author:
-      state.currentUser,
-
-    authorName:
-      personName()
+    date:new Date()
+      .toLocaleString("es-MX")
 
   });
-
-
-  addActivity(
-    "moment",
-    "Guardó un recuerdo"
-  );
 
 
   state.moments++;
@@ -3156,23 +3285,33 @@ window.saveMemory=function(){
 window.saveNight=function(){
 
   let a=
-    document.getElementById("n1")
-      .value.trim();
+    document
+      .getElementById("n1")
+      .value
+      .trim();
+
 
   let b=
-    document.getElementById("n2")
-      .value.trim();
+    document
+      .getElementById("n2")
+      .value
+      .trim();
+
 
   let c=
-    document.getElementById("n3")
-      .value.trim();
+    document
+      .getElementById("n3")
+      .value
+      .trim();
 
 
-  if(!a&&!b&&!c)
+  if(!a&&!b&&!c){
 
     return toast(
       "Escriban aunque sea una cosa ❤️"
     );
+
+  }
 
 
   state.night.push({
@@ -3181,23 +3320,10 @@ window.saveNight=function(){
     b,
     c,
 
-    date:
-      new Date()
-      .toLocaleString("es-MX"),
-
-    author:
-      state.currentUser,
-
-    authorName:
-      personName()
+    date:new Date()
+      .toLocaleString("es-MX")
 
   });
-
-
-  addActivity(
-    "moment",
-    "Hizo el cierre del día"
-  );
 
 
   state.moments++;
@@ -3219,15 +3345,12 @@ window.sendNeed=function(t){
 
     text:t,
 
-    date:
-      new Date()
+    date:new Date()
       .toLocaleString("es-MX"),
 
-    author:
-      state.currentUser,
+    author:state.currentUser,
 
-    authorName:
-      personName()
+    authorName:personName()
 
   });
 
@@ -3253,19 +3376,14 @@ window.closeSignal=function(t){
 
   state.messages.push({
 
-    kind:"direct",
-
     text:t,
 
-    date:
-      new Date()
+    date:new Date()
       .toLocaleString("es-MX"),
 
-    author:
-      state.currentUser,
+    author:state.currentUser,
 
-    authorName:
-      personName()
+    authorName:personName()
 
   });
 
@@ -3300,15 +3418,12 @@ window.saveCheckin=function(
 
     label,
 
-    date:
-      new Date()
+    date:new Date()
       .toISOString(),
 
-    author:
-      state.currentUser,
+    author:state.currentUser,
 
-    authorName:
-      personName()
+    authorName:personName()
 
   });
 
@@ -3340,12 +3455,11 @@ function renderInsights(){
       "insights"
     );
 
+
   if(!el)return;
 
 
-  const now=
-    Date.now();
-
+  const now=Date.now();
 
   const week=
     7*
@@ -3391,8 +3505,7 @@ function renderInsights(){
     const arr=
       recent.filter(
         x=>
-          (x.author||"yo")
-          ===a
+          (x.author||"yo")===a
       );
 
 
@@ -3402,16 +3515,16 @@ function renderInsights(){
     arr.forEach(
       x=>
         counts[x.type]=
-        (counts[x.type]||0)+1
+          (counts[x.type]||0)+1
     );
 
 
     const order=
-      Object.keys(counts)
+      Object
+        .keys(counts)
         .sort(
           (x,y)=>
-            counts[y]-
-            counts[x]
+            counts[y]-counts[x]
         )
         .slice(0,3);
 
@@ -3436,13 +3549,10 @@ function renderInsights(){
           </b>
 
           <p
-            style="
-              color:var(--muted);
-              margin:7px 0 0
-            "
-          >
-            Sin señales compartidas
-            esta semana.
+            style="color:var(--muted);margin:7px 0 0">
+
+            Sin señales compartidas esta semana.
+
           </p>
 
         </div>
@@ -3469,20 +3579,17 @@ function renderInsights(){
         </b>
 
         <p
-          style="
-            color:var(--muted);
-            margin:7px 0 0
-          "
-        >
+          style="color:var(--muted);margin:7px 0 0">
 
           Esta semana compartió:
 
-          ${order
-            .map(
-              k=>
-                `${labels[k]} (${counts[k]})`
-            )
-            .join(" · ")
+          ${
+            order
+              .map(
+                k=>
+                  `${labels[k]} (${counts[k]})`
+              )
+              .join(" · ")
           }
 
         </p>
@@ -3495,7 +3602,9 @@ function renderInsights(){
 
 
   el.innerHTML=
+
     personBlock("yo")+
+
     personBlock("ella")+
 
     `
@@ -3505,13 +3614,13 @@ function renderInsights(){
           color:var(--muted);
           font-size:12px;
           line-height:1.4;
-          margin-bottom:0
-        "
-      >
+          margin-bottom:0">
+
         Son patrones de lo que cada persona
         eligió expresar en la app.
         No son resultados psicológicos
         ni un diagnóstico.
+
       </p>
 
     `;
@@ -3523,15 +3632,11 @@ window.savePhrase=function(){
 
   state.phrase=
     document
-      .getElementById("couplePhrase")
+      .getElementById(
+        "couplePhrase"
+      )
       .value
       .trim();
-
-
-  addActivity(
-    "moment",
-    "Actualizó la frase de ustedes"
-  );
 
 
   save();
@@ -3544,9 +3649,7 @@ window.savePhrase=function(){
 
 
 document
-  .querySelectorAll(
-    ".nav button"
-  )
+  .querySelectorAll(".nav button")
   .forEach(
 
     b=>
@@ -3608,8 +3711,9 @@ document
     e=>{
       if(
         e.target.id==="modal"
-      )
+      ){
         closeModal();
+      }
     }
   );
 
@@ -3617,6 +3721,7 @@ document
 render();
 
 })();
+
 </script>
 
 </body>
