@@ -343,7 +343,8 @@ color:#ddd4d0;
 line-height:1.35;
 margin:0;
 max-width:390px;
-font-size:14px
+font-size:14px;
+padding-right:5px
 }
 
 .outlineBtn{
@@ -423,7 +424,8 @@ color:#f1c36b;
 background:#ffffff0d;
 border:1px solid #ffffff18;
 border-radius:99px;
-padding:7px 10px
+padding:7px 10px;
+white-space:nowrap
 }
 
 .sparkQuestion{
@@ -499,7 +501,6 @@ border:1px solid #ffffff18;
 position:relative;
 overflow:hidden;
 box-shadow:0 12px 28px #0006;
-
 display:flex;
 flex-direction:column
 }
@@ -520,7 +521,8 @@ sans-serif;
 color:#c4c5ce;
 font-size:13px;
 line-height:1.35;
-margin:0
+margin:0;
+padding-right:2px
 }
 
 .green{
@@ -581,9 +583,9 @@ line-height:1
 
 
 /*
-   IMPORTANTE:
-   Antes los botones estaban en absolute y se montaban
-   encima de las letras. Ahora quedan dentro del flujo.
+   CORRECCIÓN:
+   Los botones YA NO son absolute.
+   Ahora ocupan su propio espacio y nunca pisan el texto.
 */
 
 .mini .action{
@@ -596,7 +598,7 @@ background:#ffffff14;
 border:1px solid #ffffff25;
 text-align:center;
 font-size:14px;
-min-height:42px
+min-height:43px
 }
 
 .chips{
@@ -676,7 +678,7 @@ place-items:center
 
 
 /* ============================================================
-   TARJETAS
+   TARJETAS GENERALES
    ============================================================ */
 
 .card{
@@ -771,7 +773,7 @@ color:var(--muted)
 
 
 /* ============================================================
-   INDICADOR SEMANAL MEJORADO
+   INDICADOR SEMANAL
    ============================================================ */
 
 .progress{
@@ -1115,6 +1117,31 @@ transform:translate(-50%,0)
 
 
 /* ============================================================
+   ANIMACIONES
+   ============================================================ */
+
+@keyframes softAppear{
+
+from{
+opacity:0;
+transform:translateY(8px)
+}
+
+to{
+opacity:1;
+transform:translateY(0)
+}
+
+}
+
+.spark,
+.card,
+.mini{
+animation:softAppear .45s ease both
+}
+
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 
@@ -1189,32 +1216,6 @@ grid-column:1/-1
 
 }
 
-
-/* ============================================================
-   PEQUEÑA ANIMACIÓN DE ENTRADA
-   ============================================================ */
-
-@keyframes softAppear{
-
-from{
-opacity:0;
-transform:translateY(8px)
-}
-
-to{
-opacity:1;
-transform:translateY(0)
-}
-
-}
-
-.spark,
-.card,
-.mini{
-animation:
-softAppear .45s ease both
-}
-
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -1230,15 +1231,10 @@ softAppear .45s ease both
 <div class="heroArt">
 
 <div class="sky"></div>
-
 <div class="sun"></div>
-
 <div class="mount"></div>
-
 <div class="mount2"></div>
-
 <div class="lake"></div>
-
 <div class="reflection"></div>
 
 </div>
@@ -1329,7 +1325,7 @@ Ver propuesta　›
 
 
 <!-- ========================================================
-     NUEVO BLOQUE EMOCIONAL
+     HOY ENTRE NOSOTROS
      ======================================================== -->
 
 <div class="spark">
@@ -1958,7 +1954,6 @@ Inicio
 
 </button>
 
-
 <button
 data-page="discover">
 
@@ -1966,7 +1961,6 @@ data-page="discover">
 Descubrir
 
 </button>
-
 
 <button
 data-page="messages">
@@ -1976,7 +1970,6 @@ Mensajes
 
 </button>
 
-
 <button
 data-page="us">
 
@@ -1984,7 +1977,6 @@ data-page="us">
 Entre nosotros
 
 </button>
-
 
 <button
 data-page="us">
@@ -2132,7 +2124,7 @@ const sparks=[
 ],
 
 [
-📸,
+'📸',
 'Mándale una foto de algo que te hizo pensar en ella.',
 'Puede ser algo completamente cotidiano.'
 ],
@@ -2174,6 +2166,8 @@ const sparks=[
 ]
 
 ];
+
+let currentSpark=0;
 
 
 /* ============================================================
@@ -2411,7 +2405,7 @@ return d>=start&&d<end;
 
 
 /* ============================================================
-   ACTIVIDAD SEMANAL REAL
+   ESTADÍSTICAS REALES DE LA SEMANA
    ============================================================ */
 
 function weeklyStats(){
@@ -2421,7 +2415,6 @@ let a=
 .filter(
 x=>isThisWeek(x.date)
 );
-
 
 let moments=0;
 
@@ -2487,7 +2480,7 @@ total:a.length
 
 
 /* ============================================================
-   RACHA
+   RACHA DE CONEXIÓN
    ============================================================ */
 
 function connectionStreak(){
@@ -2539,7 +2532,7 @@ return streak;
 
 
 /* ============================================================
-   DATOS CLOUD
+   NORMALIZAR ESTADO
    ============================================================ */
 
 function normalizeState(x){
@@ -3120,11 +3113,9 @@ e.message||
 }
 
 
-window.createCouple=
-createCouple;
+window.createCouple=createCouple;
 
-window.joinCouple=
-joinCouple;
+window.joinCouple=joinCouple;
 
 
 /* ============================================================
@@ -3135,7 +3126,6 @@ function pairModal(){
 
 const connected=
 cloud.connected;
-
 
 return `
 
@@ -3268,7 +3258,7 @@ onclick="joinCouple()">
 
 }
 
-`;
+}
 
 
 /* ============================================================
@@ -3349,34 +3339,34 @@ const questions=[
    PROPUESTA DINÁMICA
    ============================================================ */
 
-let currentSpark=0;
-
-
 function renderSpark(){
 
-const s=
-sparks[currentSpark];
+const s=sparks[currentSpark];
 
-document.getElementById(
-'sparkBadge'
-).textContent=
+const badge=
+document.getElementById('sparkBadge');
+
+const question=
+document.getElementById('sparkQuestion');
+
+const sub=
+document.getElementById('sparkSub');
+
+if(!badge||!question||!sub)return;
+
+badge.textContent=
 s[0]+' PARA USTEDES';
 
-document.getElementById(
-'sparkQuestion'
-).textContent=
+question.textContent=
 s[1];
 
-document.getElementById(
-'sparkSub'
-).textContent=
+sub.textContent=
 s[2];
 
 }
 
 
-window.newSpark=
-()=>{
+window.newSpark=()=>{
 
 let next=
 Math.floor(
@@ -3397,8 +3387,7 @@ renderSpark();
 };
 
 
-window.completeSpark=
-()=>{
+window.completeSpark=()=>{
 
 const s=
 sparks[currentSpark];
@@ -3429,10 +3418,12 @@ function render(){
 
 const d=new Date();
 
+const dateText=
+document.getElementById('dateText');
 
-document.getElementById(
-'dateText'
-).textContent=
+if(dateText){
+
+dateText.textContent=
 d.toLocaleDateString(
 'es-MX',
 {
@@ -3442,36 +3433,36 @@ month:'long'
 }
 );
 
+}
 
-/* -----------------------------------------
-   ESTADÍSTICAS REALES DE ESTA SEMANA
-   ----------------------------------------- */
+
+/* ============================================================
+   ESTADÍSTICAS DE ESTA SEMANA
+   ============================================================ */
 
 const w=
 weeklyStats();
 
 
-document.getElementById(
-'sMom'
-).textContent=
-w.moments;
+const sMom=
+document.getElementById('sMom');
 
+const sLove=
+document.getElementById('sLove');
 
-document.getElementById(
-'sLove'
-).textContent=
-w.love;
+const sGames=
+document.getElementById('sGames');
 
+if(sMom)sMom.textContent=w.moments;
 
-document.getElementById(
-'sGames'
-).textContent=
-w.games;
+if(sLove)sLove.textContent=w.love;
+
+if(sGames)sGames.textContent=w.games;
 
 
 /*
-   Meta visual:
-   10 interacciones = 100%
+   10 interacciones = 100%.
+   La barra se mueve con cualquier interacción real.
 */
 
 const percent=
@@ -3481,21 +3472,32 @@ Math.min(
 );
 
 
-document.getElementById(
-'weekProgress'
-).style.width=
+const progress=
+document.getElementById('weekProgress');
+
+const percentText=
+document.getElementById('weekPercent');
+
+const progressText=
+document.getElementById('progressText');
+
+if(progress){
+
+progress.style.width=
 percent+'%';
 
+}
 
-document.getElementById(
-'weekPercent'
-).textContent=
+if(percentText){
+
+percentText.textContent=
 Math.round(percent)+'%';
 
+}
 
-document.getElementById(
-'progressText'
-).textContent=
+if(progressText){
+
+progressText.textContent=
 
 w.total===0
 
@@ -3517,25 +3519,33 @@ w.total===1
 w.total+
 'interacciones esta semana ❤️';
 
+}
 
-/* -----------------------------------------
+
+/* ============================================================
    RACHA
-   ----------------------------------------- */
+   ============================================================ */
 
 const streak=
 connectionStreak();
 
+const streakLabel=
+document.getElementById('streakLabel');
 
-document.getElementById(
-'streakLabel'
-).textContent=
+const streakText=
+document.getElementById('streakText');
+
+if(streakLabel){
+
+streakLabel.textContent=
 streak+
 (streak===1?' DÍA':' DÍAS');
 
+}
 
-document.getElementById(
-'streakText'
-).textContent=
+if(streakText){
+
+streakText.textContent=
 
 streak===0
 
@@ -3555,23 +3565,34 @@ streak===1
 
 '🔥 Llevan '+
 streak+
-'días seguidos teniendo alguna interacción en NOSOTROS.';
+' días seguidos teniendo alguna interacción en NOSOTROS.';
+
+}
 
 
-document.getElementById(
-'pYo'
-).classList.toggle(
+const pYo=
+document.getElementById('pYo');
+
+const pElla=
+document.getElementById('pElla');
+
+if(pYo){
+
+pYo.classList.toggle(
 'active',
 state.currentUser==='yo'
 );
 
+}
 
-document.getElementById(
-'pElla'
-).classList.toggle(
+if(pElla){
+
+pElla.classList.toggle(
 'active',
 state.currentUser==='ella'
 );
+
+}
 
 
 renderInsights();
@@ -3860,6 +3881,8 @@ ella:{}
 
 let p=
 a.author||'yo';
+
+if(!c[p])c[p]={};
 
 c[p][a.type]=
 (c[p][a.type]||0)+1;
@@ -4726,9 +4749,11 @@ Registrar el momento juntos.
 `;
 
 
-if(type==='settings')
+if(type==='settings'){
 
 c=pairModal();
+
+}
 
 
 document.getElementById(
@@ -4741,25 +4766,34 @@ document.getElementById(
 ).style.display='flex';
 
 
-if(type==='date')
+if(type==='date'){
 
 newDateIdea();
+
+}
 
 };
 
 
 window.closeModal=
-()=>document.getElementById(
+()=>{
+
+document.getElementById(
 'modal'
 ).style.display='none';
+
+};
 
 
 window.newQuestion=
 ()=>{
 
-document.getElementById(
-'q'
-).textContent=
+const q=
+document.getElementById('q');
+
+if(!q)return;
+
+q.textContent=
 questions[
 Math.floor(
 Math.random()*
@@ -4773,9 +4807,12 @@ questions.length
 window.newGame=
 ()=>{
 
-document.getElementById(
-'gameQ'
-).textContent=
+const gameQ=
+document.getElementById('gameQ');
+
+if(!gameQ)return;
+
+gameQ.textContent=
 [
 
 '¿Qué fue lo primero que te gustó de mí?',
@@ -4798,7 +4835,7 @@ Math.random()*4
 window.newDateIdea=
 ()=>{
 
-let a=[
+const ideas=[
 
 'Café y caminar sin celulares ☕',
 
@@ -4816,20 +4853,22 @@ let a=[
 
 ];
 
+const dateIdea=
+document.getElementById('dateIdea');
 
-document.getElementById(
-'dateIdea'
-).textContent=
-a[
+const dateWhy=
+document.getElementById('dateWhy');
+
+if(!dateIdea||!dateWhy)return;
+
+dateIdea.textContent=
+ideas[
 Math.floor(
-Math.random()*a.length
+Math.random()*ideas.length
 )
 ];
 
-
-document.getElementById(
-'dateWhy'
-).textContent=
+dateWhy.textContent=
 'La regla: durante ese momento no hablen de pendientes. Solo disfruten estar juntos.';
 
 };
@@ -4861,10 +4900,11 @@ toast(
 window.saveDirect=
 ()=>{
 
-let t=
-document.getElementById(
-'directText'
-).value.trim();
+const input=
+document.getElementById('directText');
+
+const t=
+input.value.trim();
 
 
 if(!t)
@@ -4913,16 +4953,17 @@ toast(
 window.saveFiveResponse=
 ()=>{
 
-let t=
-document.getElementById(
-'fiveAnswer'
-).value.trim();
+const answer=
+document.getElementById('fiveAnswer');
 
+const question=
+document.getElementById('q');
 
-let q=
-document.getElementById(
-'q'
-).textContent;
+const t=
+answer.value.trim();
+
+const q=
+question.textContent;
 
 
 if(!t)
@@ -4973,10 +5014,11 @@ toast(
 window.saveMemory=
 ()=>{
 
-let t=
-document.getElementById(
-'memText'
-).value.trim();
+const input=
+document.getElementById('memText');
+
+const t=
+input.value.trim();
 
 
 if(!t)
@@ -5021,22 +5063,14 @@ toast(
 window.saveNight=
 ()=>{
 
-let a=
-document.getElementById(
-'n1'
-).value.trim();
+const a=
+document.getElementById('n1').value.trim();
 
+const b=
+document.getElementById('n2').value.trim();
 
-let b=
-document.getElementById(
-'n2'
-).value.trim();
-
-
-let c=
-document.getElementById(
-'n3'
-).value.trim();
+const c=
+document.getElementById('n3').value.trim();
 
 
 if(!a&&!b&&!c)
@@ -5154,16 +5188,19 @@ label+' guardado'
 window.savePhrase=
 ()=>{
 
+const input=
+document.getElementById('couplePhrase');
+
 state.phrase=
-document.getElementById(
-'couplePhrase'
-).value.trim();
+input.value.trim();
 
 save();
 
 toast(
 '❤️ Guardado'
 );
+
+};
 
 
 /* ============================================================
@@ -5173,7 +5210,7 @@ toast(
 document
 .querySelectorAll('.nav button')
 .forEach(
-b=>
+b=>{
 
 b.onclick=()=>{
 
@@ -5186,7 +5223,7 @@ x.classList.remove('active')
 
 b.classList.add('active');
 
-let page=
+const page=
 b.dataset.page;
 
 document
@@ -5198,14 +5235,21 @@ x=>
 x.classList.add('hidden')
 );
 
-document
-.getElementById(page)
-.classList.remove('hidden');
+const target=
+document.getElementById(page);
+
+if(target){
+
+target.classList.remove('hidden');
+
+}
 
 window.scrollTo({
 top:0,
 behavior:'smooth'
 });
+
+};
 
 }
 );
@@ -5217,9 +5261,11 @@ document
 'click',
 e=>{
 
-if(e.target.id==='modal')
+if(e.target.id==='modal'){
 
 closeModal();
+
+}
 
 }
 );
