@@ -227,6 +227,7 @@ font-weight:400
 
 .infinity{
 display:block;
+text-align:center;
 color:#edc56f;
 font-size:25px;
 line-height:.7;
@@ -356,6 +357,133 @@ border:1px solid #ffffff40;
 color:#fff
 }
 
+
+/* ============================================================
+   MOMENTO ESPECIAL
+   ============================================================ */
+
+.spark{
+margin-top:14px;
+border-radius:25px;
+padding:21px;
+border:1px solid #e9bd6740;
+background:
+radial-gradient(
+circle at 90% 15%,
+#e9bd6730,
+transparent 30%
+),
+linear-gradient(
+145deg,
+#19192a,
+#111827
+);
+box-shadow:0 14px 35px #0006;
+position:relative;
+overflow:hidden
+}
+
+.spark:after{
+content:"";
+position:absolute;
+width:120px;
+height:120px;
+right:-45px;
+bottom:-55px;
+border-radius:50%;
+background:#8b69d822;
+filter:blur(4px)
+}
+
+.sparkTop{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+position:relative;
+z-index:1
+}
+
+.sparkTitle{
+font-size:21px;
+font-weight:400;
+margin:0
+}
+
+.sparkBadge{
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+sans-serif;
+font-size:10px;
+font-weight:800;
+letter-spacing:1px;
+color:#f1c36b;
+background:#ffffff0d;
+border:1px solid #ffffff18;
+border-radius:99px;
+padding:7px 10px
+}
+
+.sparkQuestion{
+position:relative;
+z-index:1;
+font-size:22px;
+line-height:1.22;
+margin:17px 0 8px
+}
+
+.sparkSub{
+position:relative;
+z-index:1;
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+sans-serif;
+font-size:13px;
+line-height:1.4;
+color:var(--muted);
+margin:0
+}
+
+.sparkActions{
+display:flex;
+gap:8px;
+margin-top:15px;
+position:relative;
+z-index:1
+}
+
+.sparkActions button{
+flex:1;
+padding:11px;
+border-radius:15px;
+background:#ffffff10;
+border:1px solid #ffffff20;
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+sans-serif;
+font-weight:700
+}
+
+.sparkActions .sparkDone{
+background:linear-gradient(
+135deg,
+#5d7df6,
+#8b69d8
+);
+border:0
+}
+
+
+/* ============================================================
+   TARJETAS PRINCIPALES
+   ============================================================ */
+
 .cards{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -364,13 +492,16 @@ margin-top:14px
 }
 
 .mini{
-min-height:205px;
+min-height:245px;
 border-radius:22px;
 padding:19px;
 border:1px solid #ffffff18;
 position:relative;
 overflow:hidden;
-box-shadow:0 12px 28px #0006
+box-shadow:0 12px 28px #0006;
+
+display:flex;
+flex-direction:column
 }
 
 .mini h3{
@@ -439,32 +570,40 @@ background:#ffffff10;
 border:1px solid #ffffff30;
 display:grid;
 place-items:center;
-font-size:18px
+font-size:18px;
+z-index:2
 }
 
 .mini .bigIcon{
-font-size:24px
+font-size:24px;
+line-height:1
 }
 
-.action{
-position:absolute;
-left:18px;
-right:18px;
-bottom:16px;
+
+/*
+   IMPORTANTE:
+   Antes los botones estaban en absolute y se montaban
+   encima de las letras. Ahora quedan dentro del flujo.
+*/
+
+.mini .action{
+position:static;
+width:100%;
+margin-top:auto;
 padding:12px;
 border-radius:18px;
 background:#ffffff14;
 border:1px solid #ffffff25;
 text-align:center;
-font-size:14px
+font-size:14px;
+min-height:42px
 }
 
 .chips{
-position:absolute;
-left:18px;
-bottom:16px;
+margin-top:auto;
 display:flex;
-gap:7px
+gap:7px;
+flex-wrap:wrap
 }
 
 .chip{
@@ -486,11 +625,13 @@ margin-top:12px
 }
 
 .smallTile{
-min-height:118px;
+min-height:138px;
 border-radius:20px;
 padding:15px;
 background:#162a53;
-border:1px solid #ffffff18
+border:1px solid #ffffff18;
+position:relative;
+text-align:left
 }
 
 .smallTile:nth-child(2){
@@ -517,12 +658,14 @@ sans-serif;
 font-size:12px;
 color:#bfc1ca;
 margin:0;
-line-height:1.25
+line-height:1.25;
+padding-right:8px
 }
 
 .smallTile .go{
-float:right;
-margin-top:15px;
+position:absolute;
+right:12px;
+bottom:12px;
 width:29px;
 height:29px;
 border-radius:50%;
@@ -567,8 +710,7 @@ font-weight:400
 font-family:
 -apple-system,
 BlinkMacSystemFont,
-"Segoe UI",
-sans-serif;
+"Segoe UI",sans-serif;
 font-size:10px;
 color:var(--gold);
 font-weight:800;
@@ -588,8 +730,7 @@ linear-gradient(
 font-family:
 -apple-system,
 BlinkMacSystemFont,
-"Segoe UI",
-sans-serif;
+"Segoe UI",sans-serif;
 font-weight:800
 }
 
@@ -616,8 +757,7 @@ text-align:center;
 font-family:
 -apple-system,
 BlinkMacSystemFont,
-"Segoe UI",
-sans-serif
+"Segoe UI",sans-serif
 }
 
 .stat strong{
@@ -629,26 +769,75 @@ font-size:22px
 color:var(--muted)
 }
 
+
+/* ============================================================
+   INDICADOR SEMANAL MEJORADO
+   ============================================================ */
+
 .progress{
-height:8px;
+height:10px;
 background:#1b2231;
 border-radius:99px;
 overflow:hidden;
-margin-top:12px
+margin-top:13px;
+position:relative
 }
 
 .progress i{
 display:block;
 height:100%;
 width:0;
+border-radius:99px;
 background:
 linear-gradient(
 90deg,
 #5d7df6,
 #9b70dc,
 #e8bf68
-)
+);
+transition:
+width .7s cubic-bezier(.22,.61,.36,1);
+box-shadow:0 0 14px #8b69d866
 }
+
+.progress.bump i{
+animation:
+progressGlow .8s ease
+}
+
+@keyframes progressGlow{
+
+0%{
+filter:brightness(1)
+}
+
+40%{
+filter:brightness(1.8)
+}
+
+100%{
+filter:brightness(1)
+}
+
+}
+
+.weekMeta{
+display:flex;
+justify-content:space-between;
+gap:8px;
+margin-top:9px;
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",sans-serif;
+font-size:11px;
+color:var(--muted)
+}
+
+
+/* ============================================================
+   SEÑALES
+   ============================================================ */
 
 .personbar{
 display:flex;
@@ -665,8 +854,7 @@ border:1px solid var(--line);
 font-family:
 -apple-system,
 BlinkMacSystemFont,
-"Segoe UI",
-sans-serif;
+"Segoe UI",sans-serif;
 font-weight:700
 }
 
@@ -705,8 +893,7 @@ color:var(--muted);
 font-family:
 -apple-system,
 BlinkMacSystemFont,
-"Segoe UI",
-sans-serif;
+"Segoe UI",sans-serif;
 font-size:11px;
 margin-top:3px
 }
@@ -726,8 +913,7 @@ color:var(--muted);
 font-family:
 -apple-system,
 BlinkMacSystemFont,
-"Segoe UI",
-sans-serif
+"Segoe UI",sans-serif
 }
 
 .activity{
@@ -748,8 +934,7 @@ padding:15px;
 font-family:
 -apple-system,
 BlinkMacSystemFont,
-"Segoe UI",
-sans-serif
+"Segoe UI",sans-serif
 }
 
 .intimacyGrid{
@@ -776,8 +961,7 @@ color:var(--muted);
 font-family:
 -apple-system,
 BlinkMacSystemFont,
-"Segoe UI",
-sans-serif;
+"Segoe UI",sans-serif;
 font-size:11px
 }
 
@@ -811,8 +995,7 @@ padding:10px 3px 12px;
 font-family:
 -apple-system,
 BlinkMacSystemFont,
-"Segoe UI",
-sans-serif;
+"Segoe UI",sans-serif;
 font-size:10px
 }
 
@@ -886,8 +1069,7 @@ color:var(--muted);
 font-family:
 -apple-system,
 BlinkMacSystemFont,
-"Segoe UI",
-sans-serif;
+"Segoe UI",sans-serif;
 font-size:12px;
 font-weight:700;
 margin:11px 0 6px
@@ -917,10 +1099,13 @@ padding:12px 17px;
 font-family:
 -apple-system,
 BlinkMacSystemFont,
-"Segoe UI",
-sans-serif;
+"Segoe UI",sans-serif;
 font-weight:800;
-transition:.25s
+transition:.25s;
+white-space:nowrap;
+max-width:90vw;
+overflow:hidden;
+text-overflow:ellipsis
 }
 
 .toast.show{
@@ -949,7 +1134,7 @@ gap:10px
 }
 
 .mini{
-min-height:205px;
+min-height:245px;
 padding:16px
 }
 
@@ -962,11 +1147,16 @@ gap:8px
 }
 
 .smallTile{
-padding:12px
+padding:12px;
+min-height:138px
 }
 
 .smallTile p{
 font-size:11px
+}
+
+.sparkQuestion{
+font-size:20px
 }
 
 }
@@ -982,7 +1172,7 @@ grid-template-columns:1fr
 }
 
 .mini{
-min-height:180px
+min-height:205px
 }
 
 .intimacyGrid{
@@ -997,6 +1187,32 @@ grid-template-columns:1fr 1fr
 grid-column:1/-1
 }
 
+}
+
+
+/* ============================================================
+   PEQUEÑA ANIMACIÓN DE ENTRADA
+   ============================================================ */
+
+@keyframes softAppear{
+
+from{
+opacity:0;
+transform:translateY(8px)
+}
+
+to{
+opacity:1;
+transform:translateY(0)
+}
+
+}
+
+.spark,
+.card,
+.mini{
+animation:
+softAppear .45s ease both
 }
 
 </style>
@@ -1086,6 +1302,7 @@ de estar cerca.
 
 <section id="home">
 
+
 <div class="feature">
 
 <div class="eyebrow">
@@ -1107,6 +1324,55 @@ class="outlineBtn"
 onclick="openModal('today')">
 Ver propuesta　›
 </button>
+
+</div>
+
+
+<!-- ========================================================
+     NUEVO BLOQUE EMOCIONAL
+     ======================================================== -->
+
+<div class="spark">
+
+<div class="sparkTop">
+
+<h2 class="sparkTitle">
+✨ Hoy entre nosotros
+</h2>
+
+<span
+class="sparkBadge"
+id="sparkBadge">
+PARA USTEDES
+</span>
+
+</div>
+
+<div
+class="sparkQuestion"
+id="sparkQuestion">
+</div>
+
+<p
+class="sparkSub"
+id="sparkSub">
+Una pequeña acción puede cambiar cómo se siente el día.
+</p>
+
+<div class="sparkActions">
+
+<button
+onclick="newSpark()">
+✨ Otra idea
+</button>
+
+<button
+class="sparkDone"
+onclick="completeSpark()">
+❤️ Lo hicimos
+</button>
+
+</div>
 
 </div>
 
@@ -1234,7 +1500,7 @@ o simplemente un mensaje.
 <button
 class="action"
 onclick="openModal('five')">
-›
+💜 Abrir 5 minutos
 </button>
 
 </div>
@@ -1268,7 +1534,7 @@ solo para ustedes.
 <button
 class="action"
 onclick="openModal('intimacy')">
-›
+❤️ Abrir espacio
 </button>
 
 </div>
@@ -1350,6 +1616,10 @@ Ideas para cuando se vean
 </div>
 
 
+<!-- ========================================================
+     ESTA SEMANA
+     ======================================================== -->
+
 <div class="card">
 
 <div class="sectionTitle">
@@ -1383,15 +1653,62 @@ NOSOTROS
 
 </div>
 
-<div class="progress">
+<div
+class="progress"
+id="progressBox">
+
 <i id="weekProgress"></i>
+
 </div>
 
-<small
-id="progressText"
-style="color:var(--muted)">
+<div class="weekMeta">
+
+<span id="progressText">
 Construyan un momento hoy.
-</small>
+</span>
+
+<span id="weekPercent">
+0%
+</span>
+
+</div>
+
+</div>
+
+
+<!-- ========================================================
+     RACHA
+     ======================================================== -->
+
+<div class="card">
+
+<div class="sectionTitle">
+
+<h2>
+🔥 Racha de conexión
+</h2>
+
+<span
+class="micro"
+id="streakLabel">
+0 DÍAS
+</span>
+
+</div>
+
+<p
+id="streakText"
+style="
+color:var(--muted);
+line-height:1.45;
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+font-size:13px;
+margin-bottom:0
+">
+
+Cada pequeño gesto cuenta.
+
+</p>
 
 </div>
 
@@ -1797,6 +2114,69 @@ let syncing=false;
 
 
 /* ============================================================
+   PROPUESTAS EMOCIONALES
+   ============================================================ */
+
+const sparks=[
+
+[
+'💌',
+'Déjale una frase que normalmente no le dices.',
+'No tiene que ser profunda. Solo tiene que ser sincera.'
+],
+
+[
+'🎵',
+'Mándale una canción que hoy te recuerde a ustedes.',
+'Dile en una frase por qué elegiste esa canción.'
+],
+
+[
+📸,
+'Mándale una foto de algo que te hizo pensar en ella.',
+'Puede ser algo completamente cotidiano.'
+],
+
+[
+'🫶',
+'Pregúntale: “¿Cómo puedo hacerte sentir querido/a hoy?”',
+'Escucha la respuesta sin intentar resolverla inmediatamente.'
+],
+
+[
+'☕',
+'Regálense 10 minutos sin teléfonos.',
+'No necesitan hacer nada especial. Solo estar juntos.'
+],
+
+[
+'🥰',
+'Dile una cosa que admiras de ella.',
+'Algo pequeño que quizá ella ni siquiera sabe que notas.'
+],
+
+[
+'🌙',
+'Pregúntale cuál fue su momento favorito del día.',
+'A veces una pregunta sencilla abre una conversación bonita.'
+],
+
+[
+'❤️',
+'Escríbele simplemente: “Hoy me acordé de nosotros”.',
+'Y deja que la conversación siga sola.'
+],
+
+[
+'✨',
+'Planeen una pequeña cita para cuando se vean.',
+'No tiene que costar dinero.'
+]
+
+];
+
+
+/* ============================================================
    CARGA LOCAL
    ============================================================ */
 
@@ -1923,7 +2303,9 @@ c=>({
 function toast(t){
 
 let x=
-document.getElementById('toast');
+document.getElementById(
+'toast'
+);
 
 x.textContent=t;
 
@@ -1980,6 +2362,185 @@ state.activity.slice(-150);
 
 }
 
+
+/* ============================================================
+   SEMANA ACTUAL
+   ============================================================ */
+
+function weekStart(){
+
+const d=new Date();
+
+d.setHours(0,0,0,0);
+
+const dayNumber=d.getDay();
+
+const diff=
+dayNumber===0
+?-6
+:1-dayNumber;
+
+d.setDate(
+d.getDate()+diff
+);
+
+return d;
+
+}
+
+
+function isThisWeek(dateValue){
+
+if(!dateValue)return false;
+
+const d=new Date(dateValue);
+
+if(Number.isNaN(d.getTime()))return false;
+
+const start=weekStart();
+
+const end=new Date(start);
+
+end.setDate(
+end.getDate()+7
+);
+
+return d>=start&&d<end;
+
+}
+
+
+/* ============================================================
+   ACTIVIDAD SEMANAL REAL
+   ============================================================ */
+
+function weeklyStats(){
+
+let a=
+(state.activity||[])
+.filter(
+x=>isThisWeek(x.date)
+);
+
+
+let moments=0;
+
+let love=0;
+
+let games=0;
+
+a.forEach(x=>{
+
+const t=x.type||'';
+
+
+if(
+[
+'momento',
+'intimidad',
+'reto',
+'recuerdo',
+'noche'
+].includes(t)
+){
+
+moments++;
+
+}
+
+
+if(
+[
+'mensaje',
+'5 minutos',
+'señal'
+].includes(t)
+){
+
+love++;
+
+}
+
+
+if(t==='juego'){
+
+games++;
+
+}
+
+});
+
+
+return{
+
+moments,
+
+love,
+
+games,
+
+total:a.length
+
+};
+
+}
+
+
+/* ============================================================
+   RACHA
+   ============================================================ */
+
+function connectionStreak(){
+
+const days=new Set();
+
+(state.activity||[])
+.forEach(a=>{
+
+if(!a.date)return;
+
+const d=new Date(a.date);
+
+if(Number.isNaN(d.getTime()))return;
+
+days.add(
+d.toISOString().slice(0,10)
+);
+
+});
+
+
+let streak=0;
+
+const cursor=new Date();
+
+cursor.setHours(0,0,0,0);
+
+while(true){
+
+const key=
+cursor.toISOString().slice(0,10);
+
+if(!days.has(key))break;
+
+streak++;
+
+cursor.setDate(
+cursor.getDate()-1
+);
+
+if(streak>365)break;
+
+}
+
+return streak;
+
+}
+
+
+/* ============================================================
+   DATOS CLOUD
+   ============================================================ */
 
 function normalizeState(x){
 
@@ -2345,8 +2906,7 @@ document.getElementById(
 'pairCode'
 ).value||''
 )
-.trim()
-.toUpperCase();
+.trim().toUpperCase();
 
 
 const display=
@@ -2443,8 +3003,7 @@ document.getElementById(
 'pairCode'
 ).value||''
 )
-.trim()
-.toUpperCase();
+.trim().toUpperCase();
 
 
 const display=
@@ -2560,12 +3119,6 @@ e.message||
 
 }
 
-
-/* ============================================================
-   ⭐ CORRECCIÓN IMPORTANTE
-   Los botones onclick necesitan estas funciones
-   disponibles globalmente.
-   ============================================================ */
 
 window.createCouple=
 createCouple;
@@ -2716,7 +3269,6 @@ onclick="joinCouple()">
 }
 
 `;
-}
 
 
 /* ============================================================
@@ -2794,6 +3346,82 @@ const questions=[
 
 
 /* ============================================================
+   PROPUESTA DINÁMICA
+   ============================================================ */
+
+let currentSpark=0;
+
+
+function renderSpark(){
+
+const s=
+sparks[currentSpark];
+
+document.getElementById(
+'sparkBadge'
+).textContent=
+s[0]+' PARA USTEDES';
+
+document.getElementById(
+'sparkQuestion'
+).textContent=
+s[1];
+
+document.getElementById(
+'sparkSub'
+).textContent=
+s[2];
+
+}
+
+
+window.newSpark=
+()=>{
+
+let next=
+Math.floor(
+Math.random()*sparks.length
+);
+
+if(next===currentSpark){
+
+next=
+(next+1)%sparks.length;
+
+}
+
+currentSpark=next;
+
+renderSpark();
+
+};
+
+
+window.completeSpark=
+()=>{
+
+const s=
+sparks[currentSpark];
+
+addActivity(
+'momento',
+'✨ '+s[1]
+);
+
+state.moments++;
+
+save();
+
+toast(
+'❤️ Momento guardado'
+);
+
+newSpark();
+
+};
+
+
+/* ============================================================
    RENDER
    ============================================================ */
 
@@ -2815,43 +3443,119 @@ month:'long'
 );
 
 
+/* -----------------------------------------
+   ESTADÍSTICAS REALES DE ESTA SEMANA
+   ----------------------------------------- */
+
+const w=
+weeklyStats();
+
+
 document.getElementById(
 'sMom'
 ).textContent=
-state.moments;
+w.moments;
 
 
 document.getElementById(
 'sLove'
 ).textContent=
-state.love;
+w.love;
 
 
 document.getElementById(
 'sGames'
 ).textContent=
-state.games;
+w.games;
+
+
+/*
+   Meta visual:
+   10 interacciones = 100%
+*/
+
+const percent=
+Math.min(
+100,
+(w.total/10)*100
+);
 
 
 document.getElementById(
 'weekProgress'
 ).style.width=
-Math.min(
-100,
-(state.moments/10)*100
-)+'%';
+percent+'%';
+
+
+document.getElementById(
+'weekPercent'
+).textContent=
+Math.round(percent)+'%';
 
 
 document.getElementById(
 'progressText'
 ).textContent=
-state.moments
+
+w.total===0
+
 ?
-'Ya llevan '+
-state.moments+
-' momentos registrados.'
+
+'Construyan un momento hoy.'
+
 :
-'Construyan un momento hoy.';
+
+w.total===1
+
+?
+
+'Ya comenzaron. Un pequeño gesto cuenta ❤️'
+
+:
+
+'Ya llevan '+
+w.total+
+'interacciones esta semana ❤️';
+
+
+/* -----------------------------------------
+   RACHA
+   ----------------------------------------- */
+
+const streak=
+connectionStreak();
+
+
+document.getElementById(
+'streakLabel'
+).textContent=
+streak+
+(streak===1?' DÍA':' DÍAS');
+
+
+document.getElementById(
+'streakText'
+).textContent=
+
+streak===0
+
+?
+
+'Cuando hagan algo juntos en NOSOTROS hoy, empezará su racha. ✨'
+
+:
+
+streak===1
+
+?
+
+'Hoy ya hubo conexión. Si mañana vuelven a compartir algo, la racha continúa. ❤️'
+
+:
+
+'🔥 Llevan '+
+streak+
+'días seguidos teniendo alguna interacción en NOSOTROS.';
 
 
 document.getElementById(
@@ -2880,11 +3584,7 @@ renderActivity();
 
 renderHistory();
 
-
-document.getElementById(
-'couplePhrase'
-).value=
-state.phrase||'';
+renderSpark();
 
 }
 
@@ -3468,6 +4168,14 @@ toast(
 
 window.challenge=
 i=>{
+
+if(state.challenges[i]){
+
+return toast(
+'✨ Ese reto ya está marcado'
+);
+
+}
 
 state.challenges[i]=1;
 
@@ -4456,8 +5164,6 @@ save();
 toast(
 '❤️ Guardado'
 );
-
-};
 
 
 /* ============================================================
