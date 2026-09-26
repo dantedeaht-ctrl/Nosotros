@@ -31,6 +31,7 @@ box-sizing:border-box
 
 html,body{
 margin:0;
+padding:0;
 background:#000;
 color:var(--text);
 font-family:Georgia,"Times New Roman",serif
@@ -40,25 +41,33 @@ body{
 padding-bottom:90px
 }
 
-.app{
-max-width:760px;
-margin:auto;
-background:var(--bg);
-min-height:100vh
-}
-
-button,input,textarea{
+button,
+input,
+textarea{
 font:inherit
 }
 
 button{
 border:0;
 cursor:pointer;
-color:inherit
+color:inherit;
+-webkit-tap-highlight-color:transparent
+}
+
+button:active{
+transform:scale(.97)
 }
 
 .hidden{
 display:none!important
+}
+
+.app{
+max-width:760px;
+margin:auto;
+background:var(--bg);
+min-height:100vh;
+overflow:hidden
 }
 
 
@@ -360,7 +369,7 @@ color:#fff
 
 
 /* ============================================================
-   MOMENTO ESPECIAL
+   TARJETA DINÁMICA
    ============================================================ */
 
 .spark{
@@ -384,25 +393,11 @@ position:relative;
 overflow:hidden
 }
 
-.spark:after{
-content:"";
-position:absolute;
-width:120px;
-height:120px;
-right:-45px;
-bottom:-55px;
-border-radius:50%;
-background:#8b69d822;
-filter:blur(4px)
-}
-
 .sparkTop{
 display:flex;
 align-items:center;
 justify-content:space-between;
-gap:10px;
-position:relative;
-z-index:1
+gap:10px
 }
 
 .sparkTitle{
@@ -429,16 +424,12 @@ white-space:nowrap
 }
 
 .sparkQuestion{
-position:relative;
-z-index:1;
-font-size:22px;
-line-height:1.22;
+font-size:21px;
+line-height:1.25;
 margin:17px 0 8px
 }
 
 .sparkSub{
-position:relative;
-z-index:1;
 font-family:
 -apple-system,
 BlinkMacSystemFont,
@@ -453,9 +444,7 @@ margin:0
 .sparkActions{
 display:flex;
 gap:8px;
-margin-top:15px;
-position:relative;
-z-index:1
+margin-top:15px
 }
 
 .sparkActions button{
@@ -473,7 +462,8 @@ font-weight:700
 }
 
 .sparkActions .sparkDone{
-background:linear-gradient(
+background:
+linear-gradient(
 135deg,
 #5d7df6,
 #8b69d8
@@ -483,7 +473,7 @@ border:0
 
 
 /* ============================================================
-   TARJETAS PRINCIPALES
+   TARJETAS DE ACCIÓN
    ============================================================ */
 
 .cards{
@@ -520,9 +510,8 @@ BlinkMacSystemFont,
 sans-serif;
 color:#c4c5ce;
 font-size:13px;
-line-height:1.35;
-margin:0;
-padding-right:2px
+line-height:1.4;
+margin:0
 }
 
 .green{
@@ -572,8 +561,7 @@ background:#ffffff10;
 border:1px solid #ffffff30;
 display:grid;
 place-items:center;
-font-size:18px;
-z-index:2
+font-size:18px
 }
 
 .mini .bigIcon{
@@ -583,16 +571,16 @@ line-height:1
 
 
 /*
-   CORRECCIÓN:
-   Los botones YA NO son absolute.
-   Ahora ocupan su propio espacio y nunca pisan el texto.
+   IMPORTANTE:
+   Los botones ya NO son position:absolute.
+   Esto evita que se empalmen con las letras.
 */
 
-.mini .action{
+.action{
 position:static;
 width:100%;
 margin-top:auto;
-padding:12px;
+padding:12px 10px;
 border-radius:18px;
 background:#ffffff14;
 border:1px solid #ffffff25;
@@ -618,6 +606,11 @@ display:grid;
 place-items:center;
 font-size:18px
 }
+
+
+/* ============================================================
+   TILES
+   ============================================================ */
 
 .bottomTiles{
 display:grid;
@@ -678,7 +671,7 @@ place-items:center
 
 
 /* ============================================================
-   TARJETAS GENERALES
+   CARDS
    ============================================================ */
 
 .card{
@@ -743,6 +736,11 @@ background:#ffffff12;
 border:1px solid #ffffff22
 }
 
+
+/* ============================================================
+   ESTADÍSTICAS
+   ============================================================ */
+
 .statrow{
 display:grid;
 grid-template-columns:repeat(3,1fr);
@@ -771,18 +769,12 @@ font-size:22px
 color:var(--muted)
 }
 
-
-/* ============================================================
-   INDICADOR SEMANAL
-   ============================================================ */
-
 .progress{
 height:10px;
 background:#1b2231;
 border-radius:99px;
 overflow:hidden;
-margin-top:13px;
-position:relative
+margin-top:13px
 }
 
 .progress i{
@@ -797,30 +789,8 @@ linear-gradient(
 #9b70dc,
 #e8bf68
 );
-transition:
-width .7s cubic-bezier(.22,.61,.36,1);
+transition:width .7s ease;
 box-shadow:0 0 14px #8b69d866
-}
-
-.progress.bump i{
-animation:
-progressGlow .8s ease
-}
-
-@keyframes progressGlow{
-
-0%{
-filter:brightness(1)
-}
-
-40%{
-filter:brightness(1.8)
-}
-
-100%{
-filter:brightness(1)
-}
-
 }
 
 .weekMeta{
@@ -838,7 +808,7 @@ color:var(--muted)
 
 
 /* ============================================================
-   SEÑALES
+   PERSONAS
    ============================================================ */
 
 .personbar{
@@ -849,7 +819,7 @@ margin-top:12px
 
 .personbar button{
 flex:1;
-padding:11px;
+padding:12px;
 border-radius:14px;
 background:#0d1420;
 border:1px solid var(--line);
@@ -864,6 +834,11 @@ font-weight:700
 background:#5d7df6;
 color:#fff
 }
+
+
+/* ============================================================
+   TILES INTERNOS
+   ============================================================ */
 
 .grid{
 display:grid;
@@ -1117,31 +1092,6 @@ transform:translate(-50%,0)
 
 
 /* ============================================================
-   ANIMACIONES
-   ============================================================ */
-
-@keyframes softAppear{
-
-from{
-opacity:0;
-transform:translateY(8px)
-}
-
-to{
-opacity:1;
-transform:translateY(0)
-}
-
-}
-
-.spark,
-.card,
-.mini{
-animation:softAppear .45s ease both
-}
-
-
-/* ============================================================
    RESPONSIVE
    ============================================================ */
 
@@ -1174,16 +1124,11 @@ gap:8px
 }
 
 .smallTile{
-padding:12px;
-min-height:138px
+padding:12px
 }
 
 .smallTile p{
 font-size:11px
-}
-
-.sparkQuestion{
-font-size:20px
 }
 
 }
@@ -1199,7 +1144,7 @@ grid-template-columns:1fr
 }
 
 .mini{
-min-height:205px
+min-height:210px
 }
 
 .intimacyGrid{
@@ -1325,7 +1270,7 @@ Ver propuesta　›
 
 
 <!-- ========================================================
-     HOY ENTRE NOSOTROS
+     NUEVO: HOY ENTRE NOSOTROS
      ======================================================== -->
 
 <div class="spark">
@@ -1347,12 +1292,13 @@ PARA USTEDES
 <div
 class="sparkQuestion"
 id="sparkQuestion">
+Elige una pequeña idea para conectar hoy.
 </div>
 
 <p
 class="sparkSub"
 id="sparkSub">
-Una pequeña acción puede cambiar cómo se siente el día.
+No tiene que ser algo grande.
 </p>
 
 <div class="sparkActions">
@@ -1375,6 +1321,8 @@ onclick="completeSpark()">
 
 <div class="cards">
 
+
+<!-- PENSÉ EN TI -->
 
 <div class="mini green">
 
@@ -1434,6 +1382,8 @@ onclick="sendNeed('😊 Quise hacerte sonreír')">
 </div>
 
 
+<!-- ESCRIBIR -->
+
 <div class="mini blue">
 
 <div class="round">
@@ -1462,11 +1412,13 @@ cuando quieras.
 <button
 class="action"
 onclick="openModal('direct')">
-✏️　Escribir mensaje
+✏️ Escribir mensaje
 </button>
 
 </div>
 
+
+<!-- 5 MINUTOS -->
 
 <div class="mini purple">
 
@@ -1501,6 +1453,8 @@ onclick="openModal('five')">
 
 </div>
 
+
+<!-- ENTRE NOSOTROS -->
 
 <div class="mini orange">
 
@@ -1537,6 +1491,8 @@ onclick="openModal('intimacy')">
 
 </div>
 
+
+<!-- TRES TARJETAS -->
 
 <div class="bottomTiles">
 
@@ -1612,9 +1568,7 @@ Ideas para cuando se vean
 </div>
 
 
-<!-- ========================================================
-     ESTA SEMANA
-     ======================================================== -->
+<!-- ESTA SEMANA -->
 
 <div class="card">
 
@@ -1649,9 +1603,7 @@ NOSOTROS
 
 </div>
 
-<div
-class="progress"
-id="progressBox">
+<div class="progress">
 
 <i id="weekProgress"></i>
 
@@ -1672,9 +1624,7 @@ Construyan un momento hoy.
 </div>
 
 
-<!-- ========================================================
-     RACHA
-     ======================================================== -->
+<!-- RACHA -->
 
 <div class="card">
 
@@ -1708,6 +1658,8 @@ Cada pequeño gesto cuenta.
 
 </div>
 
+
+<!-- SEÑALES -->
 
 <div class="card">
 
@@ -1744,6 +1696,8 @@ No es un diagnóstico.
 </div>
 
 
+<!-- QUIÉN ESTÁ AQUÍ -->
+
 <div class="card">
 
 <div class="sectionTitle">
@@ -1774,6 +1728,10 @@ onclick="setPerson('ella')">
 
 </section>
 
+
+<!-- ========================================================
+     DESCUBRIR
+     ======================================================== -->
 
 <section
 id="discover"
@@ -1820,6 +1778,10 @@ Abrir nuestro cierre del día
 </section>
 
 
+<!-- ========================================================
+     MENSAJES
+     ======================================================== -->
+
 <section
 id="messages"
 class="hidden">
@@ -1861,6 +1823,10 @@ Escribir
 
 </section>
 
+
+<!-- ========================================================
+     ENTRE NOSOTROS
+     ======================================================== -->
 
 <section
 id="us"
@@ -1941,6 +1907,10 @@ Guardar
 </div>
 
 
+<!-- ============================================================
+     NAVEGACIÓN
+     ============================================================ -->
+
 <nav class="nav">
 
 <div class="navin">
@@ -1954,6 +1924,7 @@ Inicio
 
 </button>
 
+
 <button
 data-page="discover">
 
@@ -1961,6 +1932,7 @@ data-page="discover">
 Descubrir
 
 </button>
+
 
 <button
 data-page="messages">
@@ -1970,6 +1942,7 @@ Mensajes
 
 </button>
 
+
 <button
 data-page="us">
 
@@ -1977,6 +1950,7 @@ data-page="us">
 Entre nosotros
 
 </button>
+
 
 <button
 data-page="us">
@@ -1996,6 +1970,10 @@ class="toast"
 id="toast">
 </div>
 
+
+<!-- ============================================================
+     MODAL
+     ============================================================ -->
 
 <div
 class="modal"
@@ -2106,7 +2084,7 @@ let syncing=false;
 
 
 /* ============================================================
-   PROPUESTAS EMOCIONALES
+   IDEAS DINÁMICAS
    ============================================================ */
 
 const sparks=[
@@ -2168,1097 +2146,6 @@ const sparks=[
 ];
 
 let currentSpark=0;
-
-
-/* ============================================================
-   CARGA LOCAL
-   ============================================================ */
-
-function load(){
-
-try{
-
-let x=
-Object.assign(
-{},
-D,
-JSON.parse(
-localStorage.getItem(KEY)||'{}'
-)
-);
-
-x.profile=
-Object.assign(
-{},
-D.profile,
-x.profile||{}
-);
-
-x.activity=x.activity||[];
-
-x.intimacy=x.intimacy||[];
-
-return x;
-
-}catch(e){
-
-return JSON.parse(
-JSON.stringify(D)
-);
-
-}
-
-}
-
-
-/* ============================================================
-   DATOS CLOUD
-   ============================================================ */
-
-function loadCloudMeta(){
-
-try{
-
-return Object.assign(
-{},
-JSON.parse(
-localStorage.getItem(CLOUD_KEY)||'{}'
-)
-);
-
-}catch(e){
-
-return {};
-
-}
-
-}
-
-
-function saveCloudMeta(){
-
-localStorage.setItem(
-CLOUD_KEY,
-JSON.stringify({
-
-userId:cloud.userId,
-
-coupleId:cloud.coupleId,
-
-code:cloud.code,
-
-connected:cloud.connected,
-
-role:cloud.role
-
-})
-);
-
-}
-
-
-/* ============================================================
-   GUARDAR
-   ============================================================ */
-
-function save(){
-
-localStorage.setItem(
-KEY,
-JSON.stringify(state)
-);
-
-render();
-
-syncState();
-
-}
-
-
-function esc(v){
-
-return String(v??'')
-.replace(
-/[&<>\"']/g,
-c=>({
-
-'&':'&amp;',
-'<':'&lt;',
-'>':'&gt;',
-'\"':'&quot;',
-"'":'&#39;'
-
-}[c])
-);
-
-}
-
-
-function toast(t){
-
-let x=
-document.getElementById(
-'toast'
-);
-
-x.textContent=t;
-
-x.classList.add('show');
-
-setTimeout(
-()=>x.classList.remove('show'),
-2200
-);
-
-}
-
-
-function day(){
-
-return new Date()
-.toISOString()
-.slice(0,10);
-
-}
-
-
-function name(){
-
-return state.profile[
-state.currentUser
-]||state.currentUser;
-
-}
-
-
-function addActivity(type,text){
-
-state.activity.push({
-
-type,
-
-text,
-
-author:state.currentUser,
-
-authorName:name(),
-
-date:new Date().toISOString()
-
-});
-
-if(state.activity.length>150){
-
-state.activity=
-state.activity.slice(-150);
-
-}
-
-}
-
-
-/* ============================================================
-   SEMANA ACTUAL
-   ============================================================ */
-
-function weekStart(){
-
-const d=new Date();
-
-d.setHours(0,0,0,0);
-
-const dayNumber=d.getDay();
-
-const diff=
-dayNumber===0
-?-6
-:1-dayNumber;
-
-d.setDate(
-d.getDate()+diff
-);
-
-return d;
-
-}
-
-
-function isThisWeek(dateValue){
-
-if(!dateValue)return false;
-
-const d=new Date(dateValue);
-
-if(Number.isNaN(d.getTime()))return false;
-
-const start=weekStart();
-
-const end=new Date(start);
-
-end.setDate(
-end.getDate()+7
-);
-
-return d>=start&&d<end;
-
-}
-
-
-/* ============================================================
-   ESTADÍSTICAS REALES DE LA SEMANA
-   ============================================================ */
-
-function weeklyStats(){
-
-let a=
-(state.activity||[])
-.filter(
-x=>isThisWeek(x.date)
-);
-
-let moments=0;
-
-let love=0;
-
-let games=0;
-
-a.forEach(x=>{
-
-const t=x.type||'';
-
-
-if(
-[
-'momento',
-'intimidad',
-'reto',
-'recuerdo',
-'noche'
-].includes(t)
-){
-
-moments++;
-
-}
-
-
-if(
-[
-'mensaje',
-'5 minutos',
-'señal'
-].includes(t)
-){
-
-love++;
-
-}
-
-
-if(t==='juego'){
-
-games++;
-
-}
-
-});
-
-
-return{
-
-moments,
-
-love,
-
-games,
-
-total:a.length
-
-};
-
-}
-
-
-/* ============================================================
-   RACHA DE CONEXIÓN
-   ============================================================ */
-
-function connectionStreak(){
-
-const days=new Set();
-
-(state.activity||[])
-.forEach(a=>{
-
-if(!a.date)return;
-
-const d=new Date(a.date);
-
-if(Number.isNaN(d.getTime()))return;
-
-days.add(
-d.toISOString().slice(0,10)
-);
-
-});
-
-
-let streak=0;
-
-const cursor=new Date();
-
-cursor.setHours(0,0,0,0);
-
-while(true){
-
-const key=
-cursor.toISOString().slice(0,10);
-
-if(!days.has(key))break;
-
-streak++;
-
-cursor.setDate(
-cursor.getDate()-1
-);
-
-if(streak>365)break;
-
-}
-
-return streak;
-
-}
-
-
-/* ============================================================
-   NORMALIZAR ESTADO
-   ============================================================ */
-
-function normalizeState(x){
-
-let s=
-Object.assign(
-{},
-D,
-x||{}
-);
-
-s.profile=
-Object.assign(
-{},
-D.profile,
-s.profile||{}
-);
-
-s.activity=s.activity||[];
-
-s.intimacy=s.intimacy||[];
-
-s.messages=s.messages||[];
-
-s.memories=s.memories||[];
-
-s.night=s.night||[];
-
-s.checkins=s.checkins||[];
-
-s.challenges=s.challenges||{};
-
-s.todayDone=s.todayDone||{};
-
-return s;
-
-}
-
-
-/* ============================================================
-   SUPABASE
-   ============================================================ */
-
-async function initCloud(){
-
-try{
-
-const {
-data:{session}
-}=await sb.auth.getSession();
-
-
-if(session){
-
-cloud.userId=session.user.id;
-
-}else{
-
-const {
-data,
-error
-}=await sb.auth.signInAnonymously();
-
-if(error)throw error;
-
-cloud.userId=data.user.id;
-
-}
-
-
-const meta=
-loadCloudMeta();
-
-
-if(meta.coupleId){
-
-cloud.coupleId=meta.coupleId;
-
-cloud.code=meta.code||null;
-
-cloud.role=
-meta.role||state.currentUser;
-
-cloud.connected=true;
-
-state.currentUser=
-cloud.role;
-
-
-const {
-data,
-error
-}=await sb
-.from('couple_state')
-.select('data')
-.eq(
-'couple_id',
-cloud.coupleId
-)
-.maybeSingle();
-
-
-if(error)throw error;
-
-
-if(data&&data.data){
-
-state=
-normalizeState(data.data);
-
-state.currentUser=
-cloud.role;
-
-localStorage.setItem(
-KEY,
-JSON.stringify(state)
-);
-
-}
-
-
-subscribeRealtime();
-
-render();
-
-return;
-
-}
-
-
-/* ============================================================
-   BUSCAR PAREJA EXISTENTE
-   ============================================================ */
-
-const {
-data,
-error
-}=await sb.rpc(
-'get_my_couple'
-);
-
-if(error)throw error;
-
-
-if(data&&data.length){
-
-cloud.coupleId=
-data[0].couple_id;
-
-cloud.code=
-data[0].code;
-
-cloud.role=
-data[0].role==='owner'
-?'yo'
-:'ella';
-
-cloud.connected=true;
-
-state.currentUser=
-cloud.role;
-
-
-const {
-data:st,
-error:se
-}=await sb
-.from('couple_state')
-.select('data')
-.eq(
-'couple_id',
-cloud.coupleId
-)
-.maybeSingle();
-
-
-if(se)throw se;
-
-
-if(st&&st.data){
-
-state=
-normalizeState(st.data);
-
-state.currentUser=
-cloud.role;
-
-localStorage.setItem(
-KEY,
-JSON.stringify(state)
-);
-
-}
-
-
-saveCloudMeta();
-
-subscribeRealtime();
-
-render();
-
-}
-
-}catch(e){
-
-console.warn(
-'NOSOTROS cloud init',
-e
-);
-
-render();
-
-}
-
-}
-
-
-/* ============================================================
-   REALTIME
-   ============================================================ */
-
-function subscribeRealtime(){
-
-if(!cloud.coupleId)return;
-
-sb.removeAllChannels();
-
-
-sb.channel(
-'nosotros-couple-'+
-cloud.coupleId
-)
-
-.on(
-
-'postgres_changes',
-
-{
-
-event:'UPDATE',
-
-schema:'public',
-
-table:'couple_state',
-
-filter:
-'couple_id=eq.'+
-cloud.coupleId
-
-},
-
-payload=>{
-
-if(syncing)return;
-
-if(
-payload.new&&
-payload.new.data
-){
-
-state=
-normalizeState(
-payload.new.data
-);
-
-state.currentUser=
-cloud.role||
-state.currentUser;
-
-localStorage.setItem(
-KEY,
-JSON.stringify(state)
-);
-
-render();
-
-toast(
-'💞 Se actualizó NOSOTROS'
-);
-
-}
-
-}
-
-)
-
-.subscribe();
-
-}
-
-
-/* ============================================================
-   SINCRONIZAR
-   ============================================================ */
-
-async function syncState(){
-
-if(
-!cloud.connected||
-!cloud.coupleId||
-syncing
-)return;
-
-syncing=true;
-
-try{
-
-const payload=
-JSON.parse(
-JSON.stringify(state)
-);
-
-delete payload.currentUser;
-
-
-const {
-error
-}=await sb
-.from('couple_state')
-.update({
-
-data:payload,
-
-updated_at:
-new Date().toISOString(),
-
-updated_by:
-cloud.userId
-
-})
-.eq(
-'couple_id',
-cloud.coupleId
-);
-
-
-if(error){
-
-console.warn(
-'NOSOTROS sync',
-error
-);
-
-}
-
-}finally{
-
-syncing=false;
-
-}
-
-}
-
-
-/* ============================================================
-   CREAR ESPACIO
-   ============================================================ */
-
-async function createCouple(){
-
-const code=
-(
-document.getElementById(
-'pairCode'
-).value||''
-)
-.trim().toUpperCase();
-
-
-const display=
-(
-document.getElementById(
-'pairName'
-).value||''
-)
-.trim()||'Yo';
-
-
-if(code.length<6){
-
-return toast(
-'El código debe tener 6 caracteres o más'
-);
-
-}
-
-
-try{
-
-const {
-data,
-error
-}=await sb.rpc(
-'create_couple',
-{
-p_code:code,
-p_display_name:display
-}
-);
-
-
-if(error)throw error;
-
-
-cloud.coupleId=data;
-
-cloud.code=code;
-
-cloud.role='yo';
-
-cloud.connected=true;
-
-state.currentUser='yo';
-
-state.profile.yo=display;
-
-saveCloudMeta();
-
-subscribeRealtime();
-
-await syncState();
-
-closeModal();
-
-render();
-
-toast(
-'❤️ Espacio creado: '+code
-);
-
-
-}catch(e){
-
-console.error(
-'CREATE COUPLE ERROR',
-e
-);
-
-toast(
-'⚠️ '+
-(
-e.message||
-'No se pudo crear'
-)
-);
-
-}
-
-}
-
-
-/* ============================================================
-   UNIRSE
-   ============================================================ */
-
-async function joinCouple(){
-
-const code=
-(
-document.getElementById(
-'pairCode'
-).value||''
-)
-.trim().toUpperCase();
-
-
-const display=
-(
-document.getElementById(
-'pairName'
-).value||''
-)
-.trim()||'Ella';
-
-
-if(code.length<6){
-
-return toast(
-'Escribe el código de pareja'
-);
-
-}
-
-
-try{
-
-const {
-data,
-error
-}=await sb.rpc(
-'join_couple',
-{
-p_code:code,
-p_display_name:display
-}
-);
-
-
-if(error)throw error;
-
-
-cloud.coupleId=data;
-
-cloud.code=code;
-
-cloud.role='ella';
-
-cloud.connected=true;
-
-state.currentUser='ella';
-
-saveCloudMeta();
-
-
-const {
-data:st,
-error:se
-}=await sb
-.from('couple_state')
-.select('data')
-.eq(
-'couple_id',
-cloud.coupleId
-)
-.maybeSingle();
-
-
-if(se)throw se;
-
-
-if(st&&st.data){
-
-state=
-normalizeState(st.data);
-
-}
-
-
-state.currentUser='ella';
-
-state.profile.ella=display;
-
-localStorage.setItem(
-KEY,
-JSON.stringify(state)
-);
-
-subscribeRealtime();
-
-await syncState();
-
-closeModal();
-
-render();
-
-toast(
-'💞 Ya estás dentro de NOSOTROS'
-);
-
-
-}catch(e){
-
-console.error(
-'JOIN COUPLE ERROR',
-e
-);
-
-toast(
-'⚠️ '+
-(
-e.message||
-'No se pudo unir'
-)
-);
-
-}
-
-}
-
-
-window.createCouple=createCouple;
-
-window.joinCouple=joinCouple;
-
-
-/* ============================================================
-   MODAL DE PAREJA
-   ============================================================ */
-
-function pairModal(){
-
-const connected=
-cloud.connected;
-
-return `
-
-<h2>
-☁️ ${
-connected
-?'Nuestro espacio está conectado'
-:'Conectar NOSOTROS'
-}
-</h2>
-
-${
-connected
-
-?
-
-`
-
-<div class="signalBox">
-
-<b>
-❤️ Pareja conectada
-</b>
-
-<p
-style="
-color:var(--muted);
-font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif
-">
-
-Código:
-
-<strong
-style="
-color:#fff;
-letter-spacing:2px
-">
-
-${esc(cloud.code||'')}
-
-</strong>
-
-<br>
-
-Este teléfono está como
-
-<strong style="color:#fff">
-
-${
-cloud.role==='yo'
-?'Yo'
-:'Ella'
-}
-
-</strong>.
-
-</p>
-
-</div>
-
-<button
-class="primary"
-onclick="closeModal()">
-
-Listo
-
-</button>
-
-`
-
-:
-
-`
-
-<p
-style="
-color:var(--muted);
-line-height:1.5
-">
-
-Crea un código en un teléfono
-y usa ese mismo código en el otro.
-
-No necesitas correo ni contraseña.
-
-</p>
-
-<label>
-Tu nombre
-</label>
-
-<input
-id="pairName"
-placeholder="${
-state.currentUser==='ella'
-?'Ella'
-:'Yo'
-}">
-
-<label>
-Código de pareja
-</label>
-
-<input
-id="pairCode"
-placeholder="Ej. AMOR2026"
-autocapitalize="characters">
-
-<div class="actions">
-
-<button
-class="secondary"
-onclick="createCouple()">
-
-❤️ Crear espacio
-
-</button>
-
-<button
-class="primary"
-onclick="joinCouple()">
-
-🔗 Unirme
-
-</button>
-
-</div>
-
-`
-
-}
-
-}
 
 
 /* ============================================================
@@ -3336,78 +2223,1140 @@ const questions=[
 
 
 /* ============================================================
-   PROPUESTA DINÁMICA
+   CARGA LOCAL
    ============================================================ */
 
-function renderSpark(){
+function load(){
 
-const s=sparks[currentSpark];
+try{
 
-const badge=
-document.getElementById('sparkBadge');
-
-const question=
-document.getElementById('sparkQuestion');
-
-const sub=
-document.getElementById('sparkSub');
-
-if(!badge||!question||!sub)return;
-
-badge.textContent=
-s[0]+' PARA USTEDES';
-
-question.textContent=
-s[1];
-
-sub.textContent=
-s[2];
-
-}
-
-
-window.newSpark=()=>{
-
-let next=
-Math.floor(
-Math.random()*sparks.length
+const saved=
+JSON.parse(
+localStorage.getItem(KEY)||'{}'
 );
 
-if(next===currentSpark){
+const x=
+Object.assign(
+{},
+D,
+saved
+);
 
-next=
-(next+1)%sparks.length;
+x.profile=
+Object.assign(
+{},
+D.profile,
+x.profile||{}
+);
+
+x.activity=
+x.activity||[];
+
+x.intimacy=
+x.intimacy||[];
+
+x.messages=
+x.messages||[];
+
+x.memories=
+x.memories||[];
+
+x.night=
+x.night||[];
+
+x.checkins=
+x.checkins||[];
+
+x.challenges=
+x.challenges||{};
+
+x.todayDone=
+x.todayDone||{};
+
+return x;
+
+}catch(e){
+
+console.warn('LOAD ERROR',e);
+
+return JSON.parse(
+JSON.stringify(D)
+);
 
 }
 
-currentSpark=next;
-
-renderSpark();
-
-};
+}
 
 
-window.completeSpark=()=>{
+/* ============================================================
+   CLOUD
+   ============================================================ */
+
+function loadCloudMeta(){
+
+try{
+
+return Object.assign(
+{},
+JSON.parse(
+localStorage.getItem(CLOUD_KEY)||'{}'
+)
+);
+
+}catch(e){
+
+return {};
+
+}
+
+}
+
+
+function saveCloudMeta(){
+
+localStorage.setItem(
+CLOUD_KEY,
+JSON.stringify({
+
+userId:cloud.userId,
+
+coupleId:cloud.coupleId,
+
+code:cloud.code,
+
+connected:cloud.connected,
+
+role:cloud.role
+
+})
+);
+
+}
+
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+
+function esc(v){
+
+return String(v??'')
+.replace(
+/[&<>\"']/g,
+c=>({
+
+'&':'&amp;',
+'<':'&lt;',
+'>':'&gt;',
+'\"':'&quot;',
+"'":'&#39;'
+
+}[c])
+);
+
+}
+
+
+function toast(t){
+
+const x=
+document.getElementById('toast');
+
+if(!x)return;
+
+x.textContent=t;
+
+x.classList.add('show');
+
+setTimeout(
+()=>{
+x.classList.remove('show');
+},
+2200
+);
+
+}
+
+
+function day(){
+
+return new Date()
+.toISOString()
+.slice(0,10);
+
+}
+
+
+function name(){
+
+return state.profile[
+state.currentUser
+]||
+state.currentUser;
+
+}
+
+
+function addActivity(type,text){
+
+state.activity.push({
+
+type:type,
+
+text:text,
+
+author:state.currentUser,
+
+authorName:name(),
+
+date:new Date().toISOString()
+
+});
+
+if(state.activity.length>150){
+
+state.activity=
+state.activity.slice(-150);
+
+}
+
+}
+
+
+function normalizeState(x){
 
 const s=
-sparks[currentSpark];
+Object.assign(
+{},
+D,
+x||{}
+);
 
-addActivity(
+s.profile=
+Object.assign(
+{},
+D.profile,
+s.profile||{}
+);
+
+s.activity=s.activity||[];
+
+s.intimacy=s.intimacy||[];
+
+s.messages=s.messages||[];
+
+s.memories=s.memories||[];
+
+s.night=s.night||[];
+
+s.checkins=s.checkins||[];
+
+s.challenges=s.challenges||{};
+
+s.todayDone=s.todayDone||{};
+
+return s;
+
+}
+
+
+/* ============================================================
+   GUARDAR
+   ============================================================ */
+
+function save(){
+
+localStorage.setItem(
+KEY,
+JSON.stringify(state)
+);
+
+render();
+
+syncState();
+
+}
+
+
+/* ============================================================
+   SEMANA
+   ============================================================ */
+
+function weekStart(){
+
+const d=new Date();
+
+d.setHours(0,0,0,0);
+
+const n=d.getDay();
+
+const diff=
+n===0
+?-6
+:1-n;
+
+d.setDate(
+d.getDate()+diff
+);
+
+return d;
+
+}
+
+
+function isThisWeek(value){
+
+if(!value)return false;
+
+const d=new Date(value);
+
+if(Number.isNaN(d.getTime()))
+return false;
+
+const start=weekStart();
+
+const end=new Date(start);
+
+end.setDate(
+end.getDate()+7
+);
+
+return d>=start&&d<end;
+
+}
+
+
+function weeklyStats(){
+
+const a=
+(state.activity||[])
+.filter(
+x=>isThisWeek(x.date)
+);
+
+let moments=0;
+
+let love=0;
+
+let games=0;
+
+a.forEach(x=>{
+
+if(
+[
 'momento',
-'✨ '+s[1]
-);
+'intimidad',
+'reto',
+'recuerdo',
+'noche'
+].includes(x.type)
+){
 
-state.moments++;
+moments++;
 
-save();
+}
 
-toast(
-'❤️ Momento guardado'
-);
+if(
+[
+'mensaje',
+'5 minutos',
+'señal'
+].includes(x.type)
+){
 
-newSpark();
+love++;
+
+}
+
+if(x.type==='juego'){
+
+games++;
+
+}
+
+});
+
+return{
+
+moments:moments,
+
+love:love,
+
+games:games,
+
+total:a.length
 
 };
+
+}
+
+
+function connectionStreak(){
+
+const days=new Set();
+
+(state.activity||[])
+.forEach(a=>{
+
+if(!a.date)return;
+
+const d=new Date(a.date);
+
+if(Number.isNaN(d.getTime()))
+return;
+
+days.add(
+d.toISOString().slice(0,10)
+);
+
+});
+
+let streak=0;
+
+const cursor=new Date();
+
+cursor.setHours(0,0,0,0);
+
+while(true){
+
+const k=
+cursor.toISOString().slice(0,10);
+
+if(!days.has(k))
+break;
+
+streak++;
+
+cursor.setDate(
+cursor.getDate()-1
+);
+
+if(streak>365)
+break;
+
+}
+
+return streak;
+
+}
+
+
+/* ============================================================
+   SUPABASE
+   ============================================================ */
+
+async function initCloud(){
+
+try{
+
+const result=
+await sb.auth.getSession();
+
+const session=
+result.data.session;
+
+
+if(session){
+
+cloud.userId=
+session.user.id;
+
+}else{
+
+const auth=
+await sb.auth.signInAnonymously();
+
+if(auth.error)
+throw auth.error;
+
+cloud.userId=
+auth.data.user.id;
+
+}
+
+
+const meta=
+loadCloudMeta();
+
+
+if(meta.coupleId){
+
+cloud.coupleId=
+meta.coupleId;
+
+cloud.code=
+meta.code||null;
+
+cloud.role=
+meta.role||state.currentUser;
+
+cloud.connected=true;
+
+state.currentUser=
+cloud.role;
+
+
+const result2=
+await sb
+.from('couple_state')
+.select('data')
+.eq(
+'couple_id',
+cloud.coupleId
+)
+.maybeSingle();
+
+
+if(result2.error)
+throw result2.error;
+
+
+if(
+result2.data&&
+result2.data.data
+){
+
+state=
+normalizeState(
+result2.data.data
+);
+
+state.currentUser=
+cloud.role;
+
+localStorage.setItem(
+KEY,
+JSON.stringify(state)
+);
+
+}
+
+subscribeRealtime();
+
+render();
+
+return;
+
+}
+
+
+/* BUSCAR PAREJA */
+
+const result3=
+await sb.rpc(
+'get_my_couple'
+);
+
+if(result3.error)
+throw result3.error;
+
+
+if(
+result3.data&&
+result3.data.length
+){
+
+cloud.coupleId=
+result3.data[0].couple_id;
+
+cloud.code=
+result3.data[0].code;
+
+cloud.role=
+result3.data[0].role==='owner'
+?'yo'
+:'ella';
+
+cloud.connected=true;
+
+state.currentUser=
+cloud.role;
+
+
+const result4=
+await sb
+.from('couple_state')
+.select('data')
+.eq(
+'couple_id',
+cloud.coupleId
+)
+.maybeSingle();
+
+
+if(result4.error)
+throw result4.error;
+
+
+if(
+result4.data&&
+result4.data.data
+){
+
+state=
+normalizeState(
+result4.data.data
+);
+
+state.currentUser=
+cloud.role;
+
+localStorage.setItem(
+KEY,
+JSON.stringify(state)
+);
+
+}
+
+saveCloudMeta();
+
+subscribeRealtime();
+
+render();
+
+}
+
+}catch(e){
+
+console.warn(
+'NOSOTROS CLOUD:',
+e
+);
+
+render();
+
+}
+
+}
+
+
+/* ============================================================
+   REALTIME
+   ============================================================ */
+
+function subscribeRealtime(){
+
+if(!cloud.coupleId)
+return;
+
+sb.removeAllChannels();
+
+
+sb.channel(
+'nosotros-couple-'+cloud.coupleId
+)
+
+.on(
+'postgres_changes',
+{
+event:'UPDATE',
+schema:'public',
+table:'couple_state',
+filter:
+'couple_id=eq.'+
+cloud.coupleId
+},
+payload=>{
+
+if(syncing)
+return;
+
+if(
+payload.new&&
+payload.new.data
+){
+
+state=
+normalizeState(
+payload.new.data
+);
+
+state.currentUser=
+cloud.role||
+state.currentUser;
+
+localStorage.setItem(
+KEY,
+JSON.stringify(state)
+);
+
+render();
+
+toast(
+'💞 Se actualizó NOSOTROS'
+);
+
+}
+
+}
+)
+
+.subscribe();
+
+}
+
+
+/* ============================================================
+   SYNC
+   ============================================================ */
+
+async function syncState(){
+
+if(
+!cloud.connected||
+!cloud.coupleId||
+syncing
+){
+
+return;
+
+}
+
+syncing=true;
+
+try{
+
+const payload=
+JSON.parse(
+JSON.stringify(state)
+);
+
+delete payload.currentUser;
+
+
+const result=
+await sb
+.from('couple_state')
+.update({
+
+data:payload,
+
+updated_at:
+new Date().toISOString(),
+
+updated_by:
+cloud.userId
+
+})
+.eq(
+'couple_id',
+cloud.coupleId
+);
+
+
+if(result.error){
+
+console.warn(
+'SYNC:',
+result.error
+);
+
+}
+
+}catch(e){
+
+console.warn(
+'SYNC ERROR:',
+e
+);
+
+}finally{
+
+syncing=false;
+
+}
+
+}
+
+
+/* ============================================================
+   CREAR ESPACIO
+   ============================================================ */
+
+async function createCouple(){
+
+const code=
+(
+document.getElementById(
+'pairCode'
+).value||''
+)
+.trim()
+.toUpperCase();
+
+
+const display=
+(
+document.getElementById(
+'pairName'
+).value||''
+)
+.trim()||'Yo';
+
+
+if(code.length<6){
+
+toast(
+'El código debe tener 6 caracteres o más'
+);
+
+return;
+
+}
+
+
+try{
+
+const result=
+await sb.rpc(
+'create_couple',
+{
+p_code:code,
+p_display_name:display
+}
+);
+
+
+if(result.error)
+throw result.error;
+
+
+cloud.coupleId=
+result.data;
+
+cloud.code=
+code;
+
+cloud.role=
+'yo';
+
+cloud.connected=
+true;
+
+state.currentUser=
+'yo';
+
+state.profile.yo=
+display;
+
+saveCloudMeta();
+
+subscribeRealtime();
+
+await syncState();
+
+closeModal();
+
+render();
+
+toast(
+'❤️ Espacio creado: '+code
+);
+
+}catch(e){
+
+console.error(
+'CREATE COUPLE ERROR',
+e
+);
+
+toast(
+'⚠️ '+
+(
+e.message||
+'No se pudo crear'
+)
+);
+
+}
+
+}
+
+
+window.createCouple=
+createCouple;
+
+
+/* ============================================================
+   UNIRSE
+   ============================================================ */
+
+async function joinCouple(){
+
+const code=
+(
+document.getElementById(
+'pairCode'
+).value||''
+)
+.trim()
+.toUpperCase();
+
+
+const display=
+(
+document.getElementById(
+'pairName'
+).value||''
+)
+.trim()||'Ella';
+
+
+if(code.length<6){
+
+toast(
+'Escribe el código de pareja'
+);
+
+return;
+
+}
+
+
+try{
+
+const result=
+await sb.rpc(
+'join_couple',
+{
+p_code:code,
+p_display_name:display
+}
+);
+
+
+if(result.error)
+throw result.error;
+
+
+cloud.coupleId=
+result.data;
+
+cloud.code=
+code;
+
+cloud.role=
+'ella';
+
+cloud.connected=
+true;
+
+state.currentUser=
+'ella';
+
+saveCloudMeta();
+
+
+const result2=
+await sb
+.from('couple_state')
+.select('data')
+.eq(
+'couple_id',
+cloud.coupleId
+)
+.maybeSingle();
+
+
+if(result2.error)
+throw result2.error;
+
+
+if(
+result2.data&&
+result2.data.data
+){
+
+state=
+normalizeState(
+result2.data.data
+);
+
+}
+
+state.currentUser=
+'ella';
+
+state.profile.ella=
+display;
+
+localStorage.setItem(
+KEY,
+JSON.stringify(state)
+);
+
+subscribeRealtime();
+
+await syncState();
+
+closeModal();
+
+render();
+
+toast(
+'💞 Ya estás dentro de NOSOTROS'
+);
+
+}catch(e){
+
+console.error(
+'JOIN COUPLE ERROR',
+e
+);
+
+toast(
+'⚠️ '+
+(
+e.message||
+'No se pudo unir'
+)
+);
+
+}
+
+}
+
+
+window.joinCouple=
+joinCouple;
+
+
+/* ============================================================
+   MODAL PAREJA
+   ============================================================ */
+
+function pairModal(){
+
+const connected=
+cloud.connected;
+
+if(connected){
+
+return `
+
+<h2>
+☁️ Nuestro espacio está conectado
+</h2>
+
+<div class="signalBox">
+
+<b>
+❤️ Pareja conectada
+</b>
+
+<p
+style="
+color:var(--muted);
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+line-height:1.5
+">
+
+Código:
+
+<strong
+style="
+color:#fff;
+letter-spacing:2px
+">
+
+${esc(cloud.code||'')}
+
+</strong>
+
+<br><br>
+
+Este teléfono está como
+
+<strong style="color:#fff">
+
+${
+cloud.role==='yo'
+?'Yo'
+:'Ella'
+}
+
+</strong>.
+
+</p>
+
+</div>
+
+<button
+class="primary"
+onclick="closeModal()">
+
+Listo
+
+</button>
+
+`;
+
+}
+
+
+return `
+
+<h2>
+☁️ Conectar NOSOTROS
+</h2>
+
+<p
+style="
+color:var(--muted);
+line-height:1.5
+">
+
+Crea un código en un teléfono
+y usa ese mismo código en el otro.
+
+No necesitas correo ni contraseña.
+
+</p>
+
+<label>
+Tu nombre
+</label>
+
+<input
+id="pairName"
+placeholder="${
+state.currentUser==='ella'
+?'Ella'
+:'Yo'
+}">
+
+<label>
+Código de pareja
+</label>
+
+<input
+id="pairCode"
+placeholder="Ej. AMOR2026"
+autocapitalize="characters">
+
+<div class="actions">
+
+<button
+class="secondary"
+onclick="createCouple()">
+
+❤️ Crear espacio
+
+</button>
+
+<button
+class="primary"
+onclick="joinCouple()">
+
+🔗 Unirme
+
+</button>
+
+</div>
+
+`;
+
+}
 
 
 /* ============================================================
@@ -3416,15 +3365,13 @@ newSpark();
 
 function render(){
 
-const d=new Date();
-
-const dateText=
+const dateElement=
 document.getElementById('dateText');
 
-if(dateText){
+if(dateElement){
 
-dateText.textContent=
-d.toLocaleDateString(
+dateElement.textContent=
+new Date().toLocaleDateString(
 'es-MX',
 {
 weekday:'long',
@@ -3436,11 +3383,7 @@ month:'long'
 }
 
 
-/* ============================================================
-   ESTADÍSTICAS DE ESTA SEMANA
-   ============================================================ */
-
-const w=
+const stats=
 weeklyStats();
 
 
@@ -3453,62 +3396,55 @@ document.getElementById('sLove');
 const sGames=
 document.getElementById('sGames');
 
-if(sMom)sMom.textContent=w.moments;
 
-if(sLove)sLove.textContent=w.love;
+if(sMom)
+sMom.textContent=
+stats.moments;
 
-if(sGames)sGames.textContent=w.games;
+if(sLove)
+sLove.textContent=
+stats.love;
+
+if(sGames)
+sGames.textContent=
+stats.games;
 
 
-/*
-   10 interacciones = 100%.
-   La barra se mueve con cualquier interacción real.
-*/
+/* INDICADOR */
 
 const percent=
 Math.min(
 100,
-(w.total/10)*100
+(stats.total/10)*100
 );
 
 
-const progress=
+const bar=
 document.getElementById('weekProgress');
 
-const percentText=
-document.getElementById('weekPercent');
+if(bar){
 
-const progressText=
-document.getElementById('progressText');
-
-if(progress){
-
-progress.style.width=
+bar.style.width=
 percent+'%';
 
 }
 
-if(percentText){
 
-percentText.textContent=
-Math.round(percent)+'%';
-
-}
+const progressText=
+document.getElementById('progressText');
 
 if(progressText){
 
 progressText.textContent=
 
-w.total===0
-
+stats.total===0
 ?
 
 'Construyan un momento hoy.'
 
 :
 
-w.total===1
-
+stats.total===1
 ?
 
 'Ya comenzaron. Un pequeño gesto cuenta ❤️'
@@ -3516,15 +3452,24 @@ w.total===1
 :
 
 'Ya llevan '+
-w.total+
+stats.total+
 'interacciones esta semana ❤️';
 
 }
 
 
-/* ============================================================
-   RACHA
-   ============================================================ */
+const percentElement=
+document.getElementById('weekPercent');
+
+if(percentElement){
+
+percentElement.textContent=
+Math.round(percent)+'%';
+
+}
+
+
+/* RACHA */
 
 const streak=
 connectionStreak();
@@ -3570,6 +3515,8 @@ streak+
 }
 
 
+/* PERSONA */
+
 const pYo=
 document.getElementById('pYo');
 
@@ -3611,18 +3558,98 @@ renderSpark();
 
 
 /* ============================================================
+   PROPUESTA DINÁMICA
+   ============================================================ */
+
+function renderSpark(){
+
+const item=
+sparks[currentSpark];
+
+const badge=
+document.getElementById('sparkBadge');
+
+const question=
+document.getElementById('sparkQuestion');
+
+const sub=
+document.getElementById('sparkSub');
+
+if(!badge||!question||!sub)
+return;
+
+badge.textContent=
+item[0]+' PARA USTEDES';
+
+question.textContent=
+item[1];
+
+sub.textContent=
+item[2];
+
+}
+
+
+window.newSpark=
+()=>{
+
+let next=
+Math.floor(
+Math.random()*sparks.length
+);
+
+if(next===currentSpark){
+
+next=
+(next+1)%sparks.length;
+
+}
+
+currentSpark=
+next;
+
+renderSpark();
+
+};
+
+
+window.completeSpark=
+()=>{
+
+const item=
+sparks[currentSpark];
+
+addActivity(
+'momento',
+item[1]
+);
+
+state.moments++;
+
+save();
+
+toast(
+'❤️ Momento guardado'
+);
+
+newSpark();
+
+};
+
+
+/* ============================================================
    RETOS
    ============================================================ */
 
 function renderChallenges(){
 
-let e=
+const e=
 document.getElementById(
 'challengeList'
 );
 
-if(!e)return;
-
+if(!e)
+return;
 
 e.innerHTML=
 challenges.map(
@@ -3666,32 +3693,70 @@ state.challenges[i]
 }
 
 
+window.challenge=
+i=>{
+
+if(state.challenges[i]){
+
+toast(
+'✨ Ese reto ya está marcado'
+);
+
+return;
+
+}
+
+state.challenges[i]=1;
+
+state.moments++;
+
+addActivity(
+'reto',
+'Completó: '+
+challenges[i][0]
+);
+
+save();
+
+toast(
+'✨ Reto guardado'
+);
+
+};
+
+
 /* ============================================================
    MENSAJES
    ============================================================ */
 
 function renderMessages(){
 
-let e=
+const e=
 document.getElementById(
 'messageList'
 );
 
-if(!e)return;
+if(!e)
+return;
 
-
-let a=
+const a=
 (state.messages||[])
 .slice()
 .reverse()
 .slice(0,20);
 
 
+if(!a.length){
+
 e.innerHTML=
-a.length
+'<div class="empty">Todavía no hay mensajes. Deja el primero ❤️</div>';
 
-?
+return;
 
+}
+
+
+e.innerHTML=
 a.map(
 m=>`
 
@@ -3718,11 +3783,7 @@ ${esc(m.date||'')}
 </div>
 
 `
-).join('')
-
-:
-
-'<div class="empty">Todavía no hay mensajes. Deja el primero ❤️</div>';
+).join('');
 
 }
 
@@ -3733,26 +3794,32 @@ ${esc(m.date||'')}
 
 function renderActivity(){
 
-let e=
+const e=
 document.getElementById(
 'activityList'
 );
 
-if(!e)return;
+if(!e)
+return;
 
-
-let a=
+const a=
 (state.activity||[])
 .slice()
 .reverse()
 .slice(0,15);
 
 
+if(!a.length){
+
 e.innerHTML=
-a.length
+'<div class="empty">Aquí aparecerá lo que hagan en NOSOTROS.</div>';
 
-?
+return;
 
+}
+
+
+e.innerHTML=
 a.map(
 x=>`
 
@@ -3794,11 +3861,7 @@ ${new Date(x.date)
 </div>
 
 `
-).join('')
-
-:
-
-'<div class="empty">Aquí aparecerá lo que hagan en NOSOTROS.</div>';
+).join('');
 
 }
 
@@ -3809,13 +3872,12 @@ ${new Date(x.date)
 
 function renderHistory(){
 
-let e=
+const e=
 document.getElementById(
 'historyStats'
 );
 
-
-if(e)
+if(e){
 
 e.innerHTML=`
 
@@ -3861,16 +3923,19 @@ señales
 
 `;
 
+}
 
-let s=
+
+const s=
 document.getElementById(
 'interactionSummary'
 );
 
-if(!s)return;
+if(!s)
+return;
 
 
-let c={
+const c={
 yo:{},
 ella:{}
 };
@@ -3879,10 +3944,11 @@ ella:{}
 (state.activity||[])
 .forEach(a=>{
 
-let p=
+const p=
 a.author||'yo';
 
-if(!c[p])c[p]={};
+if(!c[p])
+c[p]={};
 
 c[p][a.type]=
 (c[p][a.type]||0)+1;
@@ -3948,15 +4014,16 @@ k+': '+v
 
 function renderInsights(){
 
-let e=
+const e=
 document.getElementById(
 'insights'
 );
 
-if(!e)return;
+if(!e)
+return;
 
 
-let r=
+const r=
 (state.checkins||[])
 .filter(
 x=>
@@ -3967,7 +4034,7 @@ new Date(x.date).getTime()
 );
 
 
-let labels={
+const labels={
 
 cariño:'🥰 Cariño',
 
@@ -3993,24 +4060,25 @@ e.innerHTML=
 .map(
 p=>{
 
-let a=
+const a=
 r.filter(
 x=>
 (x.author||'yo')===p
 );
 
 
-let count={};
+const count={};
 
 
 a.forEach(
-x=>
+x=>{
 count[x.type]=
-(count[x.type]||0)+1
+(count[x.type]||0)+1;
+}
 );
 
 
-let keys=
+const keys=
 Object.keys(count)
 .sort(
 (x,y)=>
@@ -4073,13 +4141,14 @@ count[k]+')'
 
 
 /* ============================================================
-   FUNCIONES GLOBALES
+   PERSONA
    ============================================================ */
 
 window.setPerson=
 p=>{
 
-state.currentUser=p;
+state.currentUser=
+p;
 
 save();
 
@@ -4090,21 +4159,27 @@ toast(
 };
 
 
+/* ============================================================
+   PERFIL
+   ============================================================ */
+
 window.saveProfile=
 ()=>{
 
-let y=
+const y=
+(
 document.getElementById(
 'nameYo'
-).value.trim()||
-'Yo';
+).value||''
+).trim()||'Yo';
 
 
-let e=
+const e=
+(
 document.getElementById(
 'nameElla'
-).value.trim()||
-'Ella';
+).value||''
+).trim()||'Ella';
 
 
 state.profile={
@@ -4123,14 +4198,18 @@ toast(
 };
 
 
+/* ============================================================
+   INTIMIDAD
+   ============================================================ */
+
 window.saveIntimacy=
 (type,label)=>{
 
 state.intimacy.push({
 
-type,
+type:type,
 
-label,
+label:label,
 
 author:state.currentUser,
 
@@ -4158,17 +4237,26 @@ toast(
 };
 
 
+/* ============================================================
+   MOMENTO DE HOY
+   ============================================================ */
+
 window.completeToday=
 ()=>{
 
-let k=day();
+const k=
+day();
 
 
-if(state.todayDone[k])
+if(state.todayDone[k]){
 
-return toast(
+toast(
 '❤️ Ya lo hicieron hoy'
 );
+
+return;
+
+}
 
 
 state.todayDone[k]=1;
@@ -4189,36 +4277,6 @@ toast(
 };
 
 
-window.challenge=
-i=>{
-
-if(state.challenges[i]){
-
-return toast(
-'✨ Ese reto ya está marcado'
-);
-
-}
-
-state.challenges[i]=1;
-
-state.moments++;
-
-addActivity(
-'reto',
-'Completó: '+
-challenges[i][0]
-);
-
-save();
-
-toast(
-'✨ Reto guardado'
-);
-
-};
-
-
 /* ============================================================
    MODALES
    ============================================================ */
@@ -4231,7 +4289,7 @@ let c='';
 
 if(type==='today'){
 
-let m=
+const m=
 missions[
 new Date().getDate()%
 missions.length
@@ -4262,7 +4320,7 @@ ${m[1]}
 class="primary"
 onclick="
 completeToday();
-closeModal()
+closeModal();
 ">
 
 ❤️ Lo hicimos
@@ -4274,7 +4332,7 @@ closeModal()
 }
 
 
-if(type==='direct')
+if(type==='direct'){
 
 c=`
 
@@ -4282,13 +4340,9 @@ c=`
 💬 Escribirle directamente
 </h2>
 
-<p
-style="color:var(--muted)"
->
-
+<p style="color:var(--muted)">
 Escribe lo que quieras
 que la otra persona encuentre.
-
 </p>
 
 <textarea
@@ -4310,8 +4364,10 @@ onclick="saveDirect()">
 
 `;
 
+}
 
-if(type==='five')
+
+if(type==='five'){
 
 c=`
 
@@ -4364,8 +4420,10 @@ Guardar
 
 `;
 
+}
 
-if(type==='game')
+
+if(type==='game'){
 
 c=`
 
@@ -4375,7 +4433,10 @@ c=`
 
 <p
 id="gameQ"
-style="font-size:24px">
+style="
+font-size:24px;
+line-height:1.2
+">
 
 ¿Qué fue lo primero
 que te gustó de mí?
@@ -4413,8 +4474,10 @@ onclick="completeGame()">
 
 `;
 
+}
 
-if(type==='memory')
+
+if(type==='memory'){
 
 c=`
 
@@ -4438,8 +4501,10 @@ Guardar recuerdo
 
 `;
 
+}
 
-if(type==='date')
+
+if(type==='date'){
 
 c=`
 
@@ -4470,8 +4535,10 @@ onclick="newDateIdea()">
 
 `;
 
+}
 
-if(type==='night')
+
+if(type==='night'){
 
 c=`
 
@@ -4508,22 +4575,12 @@ Guardar
 
 `;
 
+}
 
-if(type==='checkin')
 
-c=`
+if(type==='checkin'){
 
-<h2>
-🧭 ¿Cómo quiero estar hoy?
-</h2>
-
-<p style="color:var(--muted)">
-Elige solo lo que quieras compartir.
-</p>
-
-<div class="grid">
-
-${[
+const choices=[
 
 [
 'cariño',
@@ -4573,9 +4630,23 @@ ${[
 'Quiero sorprender'
 ]
 
-]
+];
 
-.map(
+
+c=`
+
+<h2>
+🧭 ¿Cómo quiero estar hoy?
+</h2>
+
+<p style="color:var(--muted)">
+Elige solo lo que quieras compartir.
+</p>
+
+<div class="grid">
+
+${
+choices.map(
 x=>`
 
 <button
@@ -4604,15 +4675,17 @@ ${x[2]}
 </button>
 
 `
-)
-.join('')}
+).join('')
+}
 
 </div>
 
 `;
 
+}
 
-if(type==='profile')
+
+if(type==='profile'){
 
 c=`
 
@@ -4647,8 +4720,10 @@ Guardar nombres
 
 `;
 
+}
 
-if(type==='intimacy')
+
+if(type==='intimacy'){
 
 c=`
 
@@ -4748,23 +4823,45 @@ Registrar el momento juntos.
 
 `;
 
+}
+
 
 if(type==='settings'){
 
-c=pairModal();
+c=
+pairModal();
 
 }
 
 
+/* ============================================================
+   MOSTRAR MODAL
+   ============================================================ */
+
+const modalContent=
 document.getElementById(
 'modalContent'
-).innerHTML=c;
+);
 
-
+const modal=
 document.getElementById(
 'modal'
-).style.display='flex';
+);
 
+if(modalContent){
+
+modalContent.innerHTML=c;
+
+}
+
+if(modal){
+
+modal.style.display='flex';
+
+}
+
+
+/* CITA */
 
 if(type==='date'){
 
@@ -4775,15 +4872,30 @@ newDateIdea();
 };
 
 
+/* ============================================================
+   CERRAR MODAL
+   ============================================================ */
+
 window.closeModal=
 ()=>{
 
+const modal=
 document.getElementById(
 'modal'
-).style.display='none';
+);
+
+if(modal){
+
+modal.style.display='none';
+
+}
 
 };
 
+
+/* ============================================================
+   PREGUNTAS
+   ============================================================ */
 
 window.newQuestion=
 ()=>{
@@ -4804,6 +4916,10 @@ questions.length
 };
 
 
+/* ============================================================
+   JUEGO
+   ============================================================ */
+
 window.newGame=
 ()=>{
 
@@ -4812,8 +4928,7 @@ document.getElementById('gameQ');
 
 if(!gameQ)return;
 
-gameQ.textContent=
-[
+const list=[
 
 '¿Qué fue lo primero que te gustó de mí?',
 
@@ -4823,53 +4938,14 @@ gameQ.textContent=
 
 '¿Qué apodo secreto me pondrías?'
 
-][
+];
+
+gameQ.textContent=
+list[
 Math.floor(
-Math.random()*4
+Math.random()*list.length
 )
 ];
-
-};
-
-
-window.newDateIdea=
-()=>{
-
-const ideas=[
-
-'Café y caminar sin celulares ☕',
-
-'Película + comida favorita 🎬',
-
-'Manejar sin destino 🚗',
-
-'Cocinar algo nuevo juntos 🍳',
-
-'Ver el atardecer 🌅',
-
-'Noche de música 🎵',
-
-'Helado y una pregunta cada uno 🍦'
-
-];
-
-const dateIdea=
-document.getElementById('dateIdea');
-
-const dateWhy=
-document.getElementById('dateWhy');
-
-if(!dateIdea||!dateWhy)return;
-
-dateIdea.textContent=
-ideas[
-Math.floor(
-Math.random()*ideas.length
-)
-];
-
-dateWhy.textContent=
-'La regla: durante ese momento no hablen de pendientes. Solo disfruten estar juntos.';
 
 };
 
@@ -4897,21 +4973,85 @@ toast(
 };
 
 
+/* ============================================================
+   FECHA SORPRESA
+   ============================================================ */
+
+window.newDateIdea=
+()=>{
+
+const ideas=[
+
+'Café y caminar sin celulares ☕',
+
+'Película + comida favorita 🎬',
+
+'Manejar sin destino 🚗',
+
+'Cocinar algo nuevo juntos 🍳',
+
+'Ver el atardecer 🌅',
+
+'Noche de música 🎵',
+
+'Helado y una pregunta cada uno 🍦'
+
+];
+
+const idea=
+document.getElementById(
+'dateIdea'
+);
+
+const why=
+document.getElementById(
+'dateWhy'
+);
+
+if(!idea||!why)
+return;
+
+idea.textContent=
+ideas[
+Math.floor(
+Math.random()*ideas.length
+)
+];
+
+why.textContent=
+'La regla: durante ese momento no hablen de pendientes. Solo disfruten estar juntos.';
+
+};
+
+
+/* ============================================================
+   MENSAJE DIRECTO
+   ============================================================ */
+
 window.saveDirect=
 ()=>{
 
 const input=
-document.getElementById('directText');
+document.getElementById(
+'directText'
+);
+
+if(!input)
+return;
 
 const t=
 input.value.trim();
 
 
-if(!t)
+if(!t){
 
-return toast(
+toast(
 'Escribe algo primero ❤️'
 );
+
+return;
+
+}
 
 
 state.messages.push({
@@ -4950,14 +5090,25 @@ toast(
 };
 
 
+/* ============================================================
+   5 MINUTOS
+   ============================================================ */
+
 window.saveFiveResponse=
 ()=>{
 
 const answer=
-document.getElementById('fiveAnswer');
+document.getElementById(
+'fiveAnswer'
+);
 
 const question=
-document.getElementById('q');
+document.getElementById(
+'q'
+);
+
+if(!answer||!question)
+return;
 
 const t=
 answer.value.trim();
@@ -4966,11 +5117,15 @@ const q=
 question.textContent;
 
 
-if(!t)
+if(!t){
 
-return toast(
+toast(
 'Escribe tu respuesta ❤️'
 );
+
+return;
+
+}
 
 
 state.messages.push({
@@ -5011,21 +5166,34 @@ toast(
 };
 
 
+/* ============================================================
+   RECUERDO
+   ============================================================ */
+
 window.saveMemory=
 ()=>{
 
 const input=
-document.getElementById('memText');
+document.getElementById(
+'memText'
+);
+
+if(!input)
+return;
 
 const t=
 input.value.trim();
 
 
-if(!t)
+if(!t){
 
-return toast(
+toast(
 'Escribe el recuerdo'
 );
+
+return;
+
+}
 
 
 state.memories.push({
@@ -5060,33 +5228,53 @@ toast(
 };
 
 
+/* ============================================================
+   NOCHE
+   ============================================================ */
+
 window.saveNight=
 ()=>{
 
+const n1=
+document.getElementById('n1');
+
+const n2=
+document.getElementById('n2');
+
+const n3=
+document.getElementById('n3');
+
+if(!n1||!n2||!n3)
+return;
+
 const a=
-document.getElementById('n1').value.trim();
+n1.value.trim();
 
 const b=
-document.getElementById('n2').value.trim();
+n2.value.trim();
 
 const c=
-document.getElementById('n3').value.trim();
+n3.value.trim();
 
 
-if(!a&&!b&&!c)
+if(!a&&!b&&!c){
 
-return toast(
+toast(
 'Escriban algo ❤️'
 );
+
+return;
+
+}
 
 
 state.night.push({
 
-a,
+a:a,
 
-b,
+b:b,
 
-c,
+c:c,
 
 date:new Date()
 .toLocaleString('es-MX'),
@@ -5115,6 +5303,10 @@ toast(
 
 };
 
+
+/* ============================================================
+   SEÑALES RÁPIDAS
+   ============================================================ */
 
 window.sendNeed=
 t=>{
@@ -5149,14 +5341,18 @@ toast(
 };
 
 
+/* ============================================================
+   CHECK-IN
+   ============================================================ */
+
 window.saveCheckin=
 (type,label)=>{
 
 state.checkins.push({
 
-type,
+type:type,
 
-label,
+label:label,
 
 date:new Date().toISOString(),
 
@@ -5185,11 +5381,20 @@ label+' guardado'
 };
 
 
+/* ============================================================
+   FRASE
+   ============================================================ */
+
 window.savePhrase=
 ()=>{
 
 const input=
-document.getElementById('couplePhrase');
+document.getElementById(
+'couplePhrase'
+);
+
+if(!input)
+return;
 
 state.phrase=
 input.value.trim();
@@ -5210,9 +5415,11 @@ toast(
 document
 .querySelectorAll('.nav button')
 .forEach(
-b=>{
+button=>{
 
-b.onclick=()=>{
+button.addEventListener(
+'click',
+()=>{
 
 document
 .querySelectorAll('.nav button')
@@ -5221,10 +5428,12 @@ x=>
 x.classList.remove('active')
 );
 
-b.classList.add('active');
+button.classList.add('active');
+
 
 const page=
-b.dataset.page;
+button.dataset.page;
+
 
 document
 .querySelectorAll(
@@ -5235,25 +5444,36 @@ x=>
 x.classList.add('hidden')
 );
 
+
 const target=
-document.getElementById(page);
+document.getElementById(
+page
+);
 
 if(target){
 
-target.classList.remove('hidden');
+target.classList.remove(
+'hidden'
+);
 
 }
+
 
 window.scrollTo({
 top:0,
 behavior:'smooth'
 });
 
-};
+}
+);
 
 }
 );
 
+
+/* ============================================================
+   CERRAR MODAL TOCANDO AFUERA
+   ============================================================ */
 
 document
 .getElementById('modal')
@@ -5261,7 +5481,9 @@ document
 'click',
 e=>{
 
-if(e.target.id==='modal'){
+if(
+e.target.id==='modal'
+){
 
 closeModal();
 
